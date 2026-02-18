@@ -26,7 +26,7 @@ const CustomVideoPlayer: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full aspect-video md:aspect-[2.35/1] rounded-[40px] overflow-hidden border border-white/10 bg-black group">
+    <div className="relative w-full aspect-video md:aspect-[2.35/1] rounded-[40px] overflow-hidden border border-white/30 bg-black group">
       {/* Video Element */}
       <video
         ref={videoRef}
@@ -53,7 +53,7 @@ const CustomVideoPlayer: React.FC = () => {
 };
 
 const FeatureCard: React.FC<{
-  icon: React.ReactNode;
+  icon: string;
   title: string;
   description: string;
 }> = ({ icon, title, description }) => {
@@ -79,46 +79,68 @@ const FeatureCard: React.FC<{
       className="relative group cursor-pointer"
     >
       {/* Gradient Border Effect */}
-      <div 
-        className="absolute -inset-[1px] rounded-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+      <div
+        className="absolute -inset-[1px] rounded-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.15), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${mousePosition?.x || 0}px ${mousePosition?.y || 0}px, rgba(255,255,255,0.15), transparent 40%)`,
         }}
       />
-      
-      {/* Card Content */}
-      <div className="relative bg-[#0D0D0D] rounded-[24px] p-10 flex flex-col h-full border border-white/[0.08] overflow-hidden transition-all duration-500 group-hover:border-white/20">
-        
-        {/* Top Glow Effect on Hover - extends to center */}
-        <div 
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+
+      {/* Card */}
+      <div
+        className="
+      relative
+      bg-[#0D0D0D]
+      rounded-[24px]
+      p-10
+      flex
+      flex-col
+      h-full
+      border
+      border-white/[0.08]
+      overflow-hidden
+      transition-all
+      duration-500
+      group-hover:border-white/20
+      shadow-[0_20px_40px_rgba(0,0,0,0.6)]
+    "
+      >
+        {/* Static top glow (always visible, subtle) */}
+        <div
+          className="absolute inset-0 pointer-events-none"
           style={{
-            background: isHovered 
-              ? `radial-gradient(ellipse 100% 80% at ${mousePosition.x}px 0px, rgba(255,255,255,0.15), rgba(255,255,255,0.05) 40%, transparent 70%)`
-              : 'none',
-          }}
-        />
-        
-        {/* Static subtle top gradient */}
-        <div 
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          style={{
-            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)',
+            background:
+              "radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,0.06), transparent 60%)",
           }}
         />
 
-        {/* Icon */}
-        <div className="relative z-10 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center mb-10 text-white/80 group-hover:text-white group-hover:border-white/40 transition-all duration-300">
-          {icon}
+        {/* Icon - Glass */}
+        <div
+          className="
+        relative z-10
+        w-12 h-12
+        rounded-full
+        mb-10
+        flex items-center justify-center
+        bg-white/10
+        backdrop-blur-md
+        border border-white/20
+        text-white/80
+        transition-all duration-300
+        group-hover:text-white
+        group-hover:border-white/50
+      "
+        >
+          <img src={icon} alt="" className='w-[20px]'/>
         </div>
-        
+
         {/* Title */}
-        <h3 className="relative z-10 text-[20px] font-semibold text-white mb-3 font-display tracking-tight">
+        <h3 className="relative z-10 text-[20px] font-semibold text-white mb-3">
           {title}
         </h3>
-        
+
         {/* Description */}
-        <p className="relative z-10 text-gray-500 text-[15px] leading-relaxed group-hover:text-gray-400 transition-colors">
+        <p className="relative z-10 text-gray-400 text-[15px] leading-relaxed group-hover:text-gray-300 transition-colors">
           {description}
         </p>
       </div>
@@ -128,49 +150,55 @@ const FeatureCard: React.FC<{
 
 const VideoPodcastSection: React.FC = () => {
   return (
-    <div className="bg-brand-black py-24 relative overflow-hidden">
-      
-      {/* Background Glow - Top Right */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#6366F1]/10 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/4 z-0"></div>
+    <div className="bg-brand-black py-[60px] relative overflow-hidden">
+      {/* Right Purple Glow */}
+      <div
+        className="absolute top-0 right-0 w-[50%] h-full pointer-events-none z-0"
+        style={{
+          background:
+            "radial-gradient(70% 70% at 100% 50%, rgba(100,91,239,0.4), transparent 70%)",
+        }}
+      />
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        
+      {/* Background Glow - Top Right */}
+      <div className="absolute top-0 right-0 bg-[#0D0D0D] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/4 z-0"></div>
+
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-0 relative z-10">
         {/* Header Text */}
         <div className="text-center mb-16">
-          <h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white mb-6 tracking-tight leading-[1.2]">
+          <h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white mb-5 tracking-tight leading-[1.2]">
             Plug the power of a video <br className="hidden md:block" />
             podcast into your business
           </h2>
-          <p className="text-gray-400 text-[20px] leading-[1.5] max-w-2xl mx-auto">
-            From consultancy and guest booking to studio-quality production and delivery,
-            we own your video podcast channel.
+          <p className="text-gray-400 text-[20px] leading-[1.5] max-w-3xl mx-auto">
+            From consultancy and guest booking to studio-quality production and
+            delivery, we own your video podcast channel.
           </p>
         </div>
 
         {/* Custom Video Player */}
-        <div className="mb-8">
+        <div className="mb-5">
           <CustomVideoPlayer />
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           <FeatureCard
-            icon={<MessageCircle className="w-6 h-6" />}
+            icon="../public/marquee/messages.svg"
             title="Own the conversation"
             description="Create content that resonates with your buyers"
           />
           <FeatureCard
-            icon={<Share2 className="w-6 h-6" />}
+            icon="../public/marquee/share.svg"
             title="Connect with industry leaders"
             description="We get you and your team booked on established shows in your sector."
           />
           <FeatureCard
-            icon={<Clapperboard className="w-6 h-6" />}
+            icon="../public/marquee/laptop.svg"
             title="Clips, reels and more"
             description="We create podcast roadmaps and content plans that align with your marketing goals."
           />
         </div>
-
       </div>
     </div>
   );

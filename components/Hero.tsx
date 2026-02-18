@@ -1,11 +1,4 @@
 import React from "react";
-import img1 from "../public/marquee/lucky-saint.png";
-import img2 from "../public/marquee/kpmg.png";
-import img3 from "../public/marquee/cisco.png";
-import img4 from "../public/marquee/ig.png";
-import img5 from "../public/marquee/soldo.png";
-import img6 from "../public/marquee/wenodo.png";
-import img7 from "../public/marquee/finn.png";
 
 const LogoItem: React.FC<{
   name: string;
@@ -23,8 +16,8 @@ const LogoItem: React.FC<{
     )}
 
     <div className="px-4 lg:px-6 w-full flex items-center justify-center opacity-70 group-hover:opacity-100 transition-opacity">
-      <span className="font-sans font-bold w-16 tracking-wider text-white whitespace-nowrap">
-        <img src={name} alt="" />
+      <span className="font-sans font-bold tracking-wider text-white whitespace-nowrap">
+        <img src={name} alt="" className=" w-16" />
       </span>
     </div>
   </div>
@@ -37,7 +30,7 @@ const Hero: React.FC = () => {
       <div className="absolute top-0 left-0 max-w-[1280px] bg-glow-effect pointer-events-none -translate-x-1/4 -translate-y-1/4 z-0 opacity-80"></div>
 
       <div className="w-full max-w-[1280px] mx-auto px-6 lg:px-0 z-10 flex-grow flex flex-col">
-        <div className="flex flex-col lg:flex-row items-center justify-between pt-8 lg:pt-20 pb-12 lg:pb-0 flex-grow">
+        <div className="flex flex-col lg:flex-row items-center justify-between pt-8 lg:pt-20 pb-[120px] lg:pb-0 flex-grow">
           {/* Left Text Content */}
           <div className="flex-1 text-center lg:text-left z-20 w-full lg:max-w-[50%]">
             <h1 className="text-[38px] md:text-6xl lg:text-[72px] font-display font-bold tracking-tight text-white leading-[1.1] mb-6">
@@ -53,7 +46,7 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-              <button className="group flex items-center justify-between gap-3 rounded-full bg-gradient-to-l from-[#818cf8] to-[#6366f1] text-lg font-medium text-white transition-all hover:opacity-90 shadow-[0_0_20px_rgba(99,102,241,0.3)]">
+              <button className="group flex items-center justify-between gap-3 rounded-[50px] bg-gradient-to-l from-[#818cf8] to-[#6366f1] text-lg font-medium text-white transition-all hover:opacity-90 shadow-[0_0_20px_rgba(99,102,241,0.3)]">
                 <span className="py-[14px] pl-[20px]">Chat to the team</span>
 
                 <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/20 bg-black transition-transform group-hover:scale-105 mr-[4px] my-[4px]">
@@ -76,7 +69,7 @@ const Hero: React.FC = () => {
 
               <button
                 className="flex items-center gap-3 
-                     rounded-full 
+                     rounded-[50px] 
                      border
                      bg-white/10 
                      backdrop-blur-md 
@@ -92,7 +85,7 @@ const Hero: React.FC = () => {
                        bg-white/15
                        border border-white/20 mr-[4px] my-[4px]"
                 >
-                 <img src="../public/marquee/video.png" alt=""/>
+                  <img src="../public/marquee/video.png" alt="" />
                 </span>
               </button>
             </div>
@@ -178,13 +171,13 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="flex flex-wrap justify-between gap-x-8 gap-y-6 lg:gap-8 w-full mx-auto opacity-80">
-            <LogoItem name={img1} />
-            <LogoItem name={img2} />
-            <LogoItem name={img3} />
-            <LogoItem name={img4} />
-            <LogoItem name={img5} />
-            <LogoItem name={img6} />
-            <LogoItem name={img7} />
+            <LogoItem name="../public/marquee/lucky-saint.png" />
+            <LogoItem name="../public/marquee/kpmg.png" />
+            <LogoItem name="../public/marquee/cisco.png" />
+            <LogoItem name="../public/marquee/ig.png" />
+            <LogoItem name="../public/marquee/soldo.png" />
+            <LogoItem name="../public/marquee/wenodo.png" />
+            <LogoItem name="../public/marquee/finn.png" />
           </div>
         </div>
       </div>
