@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
 										boxShadow:
 											"inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -1px 0 rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.3)",
 									}}>
-									<img src="../public/marquee/video.png" alt="" />
+									<img src="marquee/video.png" alt="" />
 								</span>
 							</button>
 						</div>

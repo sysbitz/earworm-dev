@@ -8,7 +8,7 @@ const CustomVideoPlayer: React.FC = () => {
 
 	const videoSrc =
 		"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
-	const posterSrc = "../public/video_layer.png";
+	const posterSrc = "/video_layer.png";
 
 	const togglePlay = () => {
 		if (!videoRef.current) return;
@@ -152,7 +152,7 @@ const VideoPodcastSection: React.FC = () => {
 		<div className="bg-brand-black py-[60px] relative overflow-hidden">
 			{/* Right Background Gradient SVG */}
 			<img
-				src="../public/marquee/bg-grad.svg"
+				src="/marquee/bg-grad.svg"
 				alt=""
 				aria-hidden="true"
 				className="absolute top-0 right-[-100px] w-[50%] h-full pointer-events-none z-0 object-cover"
@@ -182,17 +182,17 @@ const VideoPodcastSection: React.FC = () => {
 				{/* Features Grid */}
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 					<FeatureCard
-						icon="../public/marquee/messages.svg"
+						icon="/marquee/messages.svg"
 						title="Own the conversation"
 						description="Create content that resonates with your buyers"
 					/>
 					<FeatureCard
-						icon="../public/marquee/share.svg"
+						icon="/marquee/share.svg"
 						title="Connect with industry leaders"
 						description="We get you and your team booked on established shows in your sector."
 					/>
 					<FeatureCard
-						icon="../public/marquee/laptop.svg"
+						icon="/marquee/laptop.svg"
 						title="Clips, reels and more"
 						description="We create podcast roadmaps and content plans that align with your marketing goals."
 					/>
