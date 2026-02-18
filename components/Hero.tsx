@@ -188,13 +188,13 @@ const Hero: React.FC = () => {
 					</p>
 
 					<div className="flex flex-wrap justify-between gap-x-8 gap-y-6 lg:gap-8 w-full mx-auto opacity-80">
-						<LogoItem name="../public/marquee/lucky-saint.png" />
-						<LogoItem name="../public/marquee/kpmg.png" />
-						<LogoItem name="../public/marquee/cisco.png" />
-						<LogoItem name="../public/marquee/ig.png" />
-						<LogoItem name="../public/marquee/soldo.png" />
-						<LogoItem name="../public/marquee/wenodo.png" />
-						<LogoItem name="../public/marquee/finn.png" />
+						<LogoItem name="/marquee/lucky-saint.png" />
+						<LogoItem name="/marquee/kpmg.png" />
+						<LogoItem name="/marquee/cisco.png" />
+						<LogoItem name="/marquee/ig.png" />
+						<LogoItem name="/marquee/soldo.png" />
+						<LogoItem name="/marquee/wenodo.png" />
+						<LogoItem name="/marquee/finn.png" />
 					</div>
 				</div>
 			</div>
