@@ -150,58 +150,58 @@ const FeatureCard: React.FC<{
 
 const VideoPodcastSection: React.FC = () => {
   return (
-    <div className="bg-brand-black py-[60px] relative overflow-hidden">
-      {/* Right Purple Glow */}
-      <div
-        className="absolute top-0 right-0 w-[50%] h-full pointer-events-none z-0"
-        style={{
-          background:
-            "radial-gradient(70% 70% at 100% 50%, rgba(100,91,239,0.4), transparent 70%)",
-        }}
-      />
+		<div className="bg-brand-black py-[60px] relative overflow-hidden">
+			{/* Right Purple Glow */}
+			<div
+				className="absolute top-0 right-0 w-[50%] h-full pointer-events-none z-0"
+				style={{
+					background:
+						"radial-gradient(70% 70% at 100% 50%, #8266FF, transparent 70%)",
+				}}
+			/>
 
-      {/* Background Glow - Top Right */}
-      <div className="absolute top-0 right-0 bg-[#0D0D0D] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/4 z-0"></div>
+			{/* Background Glow - Top Right */}
+			<div className="absolute top-0 right-0 bg-[#0D0D0D] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/4 z-0"></div>
 
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-0 relative z-10">
-        {/* Header Text */}
-        <div className="text-center mb-16">
-          <h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white mb-5 tracking-tight leading-[1.2]">
-            Plug the power of a video <br className="hidden md:block" />
-            podcast into your business
-          </h2>
-          <p className="text-gray-400 text-[20px] leading-[1.5] max-w-3xl mx-auto">
-            From consultancy and guest booking to studio-quality production and
-            delivery, we own your video podcast channel.
-          </p>
-        </div>
+			<div className="max-w-[1280px] mx-auto px-6 lg:px-0 relative z-10">
+				{/* Header Text */}
+				<div className="text-center mb-16">
+					<h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white mb-5 tracking-tight leading-[1.2]">
+						Plug the power of a video <br className="hidden md:block" />
+						podcast into your business
+					</h2>
+					<p className="text-gray-400 text-[20px] leading-[1.5] max-w-3xl mx-auto">
+						From consultancy and guest booking to studio-quality production and
+						delivery, we own your video podcast channel.
+					</p>
+				</div>
 
-        {/* Custom Video Player */}
-        <div className="mb-5">
-          <CustomVideoPlayer />
-        </div>
+				{/* Custom Video Player */}
+				<div className="mb-5">
+					<CustomVideoPlayer />
+				</div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <FeatureCard
-            icon="../public/marquee/messages.svg"
-            title="Own the conversation"
-            description="Create content that resonates with your buyers"
-          />
-          <FeatureCard
-            icon="../public/marquee/share.svg"
-            title="Connect with industry leaders"
-            description="We get you and your team booked on established shows in your sector."
-          />
-          <FeatureCard
-            icon="../public/marquee/laptop.svg"
-            title="Clips, reels and more"
-            description="We create podcast roadmaps and content plans that align with your marketing goals."
-          />
-        </div>
-      </div>
-    </div>
-  );
+				{/* Features Grid */}
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+					<FeatureCard
+						icon="../public/marquee/messages.svg"
+						title="Own the conversation"
+						description="Create content that resonates with your buyers"
+					/>
+					<FeatureCard
+						icon="../public/marquee/share.svg"
+						title="Connect with industry leaders"
+						description="We get you and your team booked on established shows in your sector."
+					/>
+					<FeatureCard
+						icon="../public/marquee/laptop.svg"
+						title="Clips, reels and more"
+						description="We create podcast roadmaps and content plans that align with your marketing goals."
+					/>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default VideoPodcastSection;
