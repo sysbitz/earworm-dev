@@ -25,164 +25,181 @@ const LogoItem: React.FC<{
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative bg-brand-black min-h-screen flex flex-col pt-[120px]">
-      {/* Background Glow Effect - Positioned behind text */}
-      <div className="absolute top-0 left-0 max-w-[1280px] bg-glow-effect pointer-events-none -translate-x-1/4 -translate-y-1/4 z-0 opacity-80"></div>
+		<div className="relative bg-brand-black min-h-screen flex flex-col pt-[120px]">
+			{/* Background Glow Effect - Positioned behind text */}
+			<div className="absolute top-0 left-0 max-w-[1280px] bg-glow-effect pointer-events-none -translate-x-1/4 -translate-y-1/4 z-0 opacity-80"></div>
 
-      <div className="w-full max-w-[1280px] mx-auto px-6 lg:px-0 z-10 flex-grow flex flex-col">
-        <div className="flex flex-col lg:flex-row items-center justify-between pt-8 lg:pt-20 pb-[120px] lg:pb-0 flex-grow">
-          {/* Left Text Content */}
-          <div className="flex-1 text-center lg:text-left z-20 w-full lg:max-w-[50%]">
-            <h1 className="text-[38px] md:text-6xl lg:text-[72px] font-display font-bold tracking-tight text-white leading-[1.1] mb-6">
-              <span className="text-brand-green">Video podcasts</span> for{" "}
-              <br />
-              forward thinking <br />
-              businesses
-            </h1>
+			<div className="w-full max-w-[1280px] mx-auto px-6 lg:px-0 z-10 flex-grow flex flex-col">
+				<div className="flex flex-col lg:flex-row items-center justify-between pt-8 lg:pt-20 pb-[120px] lg:pb-0 flex-grow">
+					{/* Left Text Content */}
+					<div className="flex-1 text-center lg:text-left z-20 w-full lg:max-w-[50%]">
+						<h1 className="text-[38px] md:text-6xl lg:text-[72px] font-display font-bold tracking-tight text-white leading-[1.1] mb-6">
+							<span className="text-brand-green">Video podcasts</span> for{" "}
+							<br />
+							forward thinking <br />
+							businesses
+						</h1>
 
-            <p className="mt-6 lg:mt-[20px] mb-[40px] text-[16px] lg:text-[20px] text-gray-300 max-w-xl mx-auto lg:mx-0 font-normal leading-[1.5] px-2 lg:px-0">
-              We plan, produce, and distribute strategic video podcasts that
-              build brand authority and support growth
-            </p>
+						<p className="mt-6 lg:mt-[20px] mb-[40px] text-[16px] lg:text-[20px] text-gray-300 max-w-xl mx-auto lg:mx-0 font-normal leading-[1.5] px-2 lg:px-0">
+							We plan, produce, and distribute strategic video podcasts that
+							build brand authority and support growth
+						</p>
 
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-              <button className="group flex items-center justify-between gap-3 rounded-[50px] bg-gradient-to-l from-[#818cf8] to-[#6366f1] text-lg font-medium text-white transition-all hover:opacity-90 shadow-[0_0_20px_rgba(99,102,241,0.3)]">
-                <span className="py-[14px] pl-[20px]">Chat to the team</span>
+						<div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+							<button className="group flex items-center justify-between gap-3 rounded-[50px] bg-[linear-gradient(264deg,#FFF_-74.9%,#645BEF_64.18%)] text-lg font-medium text-white transition-all hover:opacity-90 shadow-[0_0_20px_rgba(99,102,241,0.3)]">
+								<span className="py-[14px] pl-[20px]">Chat to the team</span>
 
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/20 bg-black transition-transform group-hover:scale-105 mr-[4px] my-[4px]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    className="h-5 w-5 text-white"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                    />
-                  </svg>
-                </div>
-              </button>
+								<div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/20 bg-black transition-transform group-hover:scale-105 mr-[4px] my-[4px]">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="2"
+										stroke="currentColor"
+										className="h-5 w-5 text-white">
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+										/>
+									</svg>
+								</div>
+							</button>
 
-              <button
-                className="flex items-center gap-3 
-                     rounded-[50px] 
-                     border
-                     bg-white/10 
-                     backdrop-blur-md 
-                     text-white text-xl font-medium
-                     shadow-lg"
-              >
-                <span className="py-[14px] pl-[20px]">Watch showreel</span>
+							<button
+								className="flex items-center gap-2
+             rounded-[50px]
+             border border-white/20
+             bg-white/10
+             backdrop-blur-xl
+             text-white text-xl font-semibold
+             shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-1px_0_rgba(0,0,0,0.2)]
+             relative overflow-hidden
+             transition-all duration-300
+             hover:bg-white/15 hover:shadow-[0_12px_40px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.25)]
+             pr-[5px] pl-[24px] py-[5px]"
+								style={{
+									background:
+										"linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)",
+								}}>
+								{/* Glass sheen overlay */}
+								<span
+									className="absolute inset-0 rounded-[50px] pointer-events-none"
+									style={{
+										background:
+											"linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%)",
+									}}
+								/>
 
-                <span
-                  className="flex items-center justify-center
-                       w-12 h-12
-                       rounded-full
-                       bg-white/15
-                       border border-white/20 mr-[4px] my-[4px]"
-                >
-                  <img src="../public/marquee/video.png" alt="" />
-                </span>
-              </button>
-            </div>
-          </div>
+								<span className="relative z-10 py-2">Watch showreel</span>
 
-          {/* Right Image Composition */}
-          {/* Fixed: Use flex layout instead of absolute positioning on desktop to prevent overlap */}
-          <div className="flex-1 w-full lg:w-auto mt-16 lg:mt-0 flex items-center justify-center lg:justify-end relative z-10 overflow-visible">
-            <div
-              className="relative overflow-visible"
-              style={{ width: "489px", height: "447px" }}
-            >
-              {/* Ellipse glow effects - using same approach as TestimonialsSection */}
-              <img
-                src="/Ellipse 11.png"
-                alt=""
-                className="absolute pointer-events-none opacity-30 blur-sm"
-                style={{
-                  left: "20%",
-                  top: "50%",
-                  transform: "translate(-50%, -50%) scale(1.0)",
-                  mixBlendMode: "screen",
-                  zIndex: 0,
-                }}
-              />
-              <img
-                src="/Ellipse 12.png"
-                alt=""
-                className="absolute pointer-events-none opacity-30 blur-sm"
-                style={{
-                  left: "70%",
-                  top: "40%",
-                  transform: "translate(-50%, -50%) scale(1.0)",
-                  mixBlendMode: "screen",
-                  zIndex: 0,
-                }}
-              />
+								<span
+									className="relative z-10 flex items-center justify-center
+             w-12 h-12
+             rounded-full
+             border border-white/25
+             flex-shrink-0"
+									style={{
+										background:
+											"linear-gradient(145deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.08) 100%)",
+										boxShadow:
+											"inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -1px 0 rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.3)",
+									}}>
+									<img src="../public/marquee/video.png" alt="" />
+								</span>
+							</button>
+						</div>
+					</div>
 
-              {/* Shape 1: Capsule (Left) - Man with microphone - 230.37x447px */}
-              <div
-                className="absolute z-20 overflow-hidden"
-                style={{
-                  left: "0px",
-                  top: "0px",
-                  width: "230px",
-                  height: "447px",
-                  borderRadius: "999999px",
-                }}
-              >
-                <img
-                  src="/shape (2).png"
-                  alt="Podcast host with microphone"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+					{/* Right Image Composition */}
+					{/* Fixed: Use flex layout instead of absolute positioning on desktop to prevent overlap */}
+					<div className="flex-1 w-full lg:w-auto mt-16 lg:mt-0 flex items-center justify-center lg:justify-end relative z-10 overflow-visible">
+						<div
+							className="relative overflow-visible"
+							style={{ width: "489px", height: "447px" }}>
+							{/* Ellipse glow effects - using same approach as TestimonialsSection */}
+							<img
+								src="/Ellipse 11.png"
+								alt=""
+								className="absolute pointer-events-none opacity-30 blur-sm"
+								style={{
+									left: "20%",
+									top: "50%",
+									transform: "translate(-50%, -50%) scale(1.0)",
+									mixBlendMode: "screen",
+									zIndex: 0,
+								}}
+							/>
+							<img
+								src="/Ellipse 12.png"
+								alt=""
+								className="absolute pointer-events-none opacity-30 blur-sm"
+								style={{
+									left: "70%",
+									top: "40%",
+									transform: "translate(-50%, -50%) scale(1.0)",
+									mixBlendMode: "screen",
+									zIndex: 0,
+								}}
+							/>
 
-              {/* Shape 2: Circle (Right, Higher) - Red studio - 230.37x230.37px */}
-              <div
-                className="absolute z-30 overflow-hidden"
-                style={{
-                  left: "259px",
-                  top: "12px",
-                  width: "230px",
-                  height: "230px",
-                  borderRadius: "50%",
-                }}
-              >
-                <img
-                  src="/shape (1).png"
-                  alt="Red studio background"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+							{/* Shape 1: Capsule (Left) - Man with microphone - 230.37x447px */}
+							<div
+								className="absolute z-20 overflow-hidden"
+								style={{
+									left: "0px",
+									top: "0px",
+									width: "230px",
+									height: "447px",
+									borderRadius: "999999px",
+								}}>
+								<img
+									src="/shape (2).png"
+									alt="Podcast host with microphone"
+									className="w-full h-full object-cover"
+								/>
+							</div>
 
-        {/* Trusted By Section */}
-        <div className="pb-12 lg:pb-16 mt-[174px]">
-          <p className="text-center text-[16px] lg:text-[19px] text-white mb-[40px] lg:mb-12 font-medium">
-            Trusted by <span className="text-[#1CF975] font-bold">100+</span>{" "}
-            clever businesses
-          </p>
+							{/* Shape 2: Circle (Right, Higher) - Red studio - 230.37x230.37px */}
+							<div
+								className="absolute z-30 overflow-hidden"
+								style={{
+									left: "259px",
+									top: "12px",
+									width: "230px",
+									height: "230px",
+									borderRadius: "50%",
+								}}>
+								<img
+									src="/shape (1).png"
+									alt="Red studio background"
+									className="w-full h-full object-cover"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
 
-          <div className="flex flex-wrap justify-between gap-x-8 gap-y-6 lg:gap-8 w-full mx-auto opacity-80">
-            <LogoItem name="../public/marquee/lucky-saint.png" />
-            <LogoItem name="../public/marquee/kpmg.png" />
-            <LogoItem name="../public/marquee/cisco.png" />
-            <LogoItem name="../public/marquee/ig.png" />
-            <LogoItem name="../public/marquee/soldo.png" />
-            <LogoItem name="../public/marquee/wenodo.png" />
-            <LogoItem name="../public/marquee/finn.png" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+				{/* Trusted By Section */}
+				<div className="pb-12 lg:pb-16 mt-[174px]">
+					<p className="text-center text-[16px] lg:text-[19px] text-white mb-[40px] lg:mb-12 font-medium">
+						Trusted by <span className="text-[#1CF975] font-bold">100+</span>{" "}
+						clever businesses
+					</p>
+
+					<div className="flex flex-wrap justify-between gap-x-8 gap-y-6 lg:gap-8 w-full mx-auto opacity-80">
+						<LogoItem name="../public/marquee/lucky-saint.png" />
+						<LogoItem name="../public/marquee/kpmg.png" />
+						<LogoItem name="../public/marquee/cisco.png" />
+						<LogoItem name="../public/marquee/ig.png" />
+						<LogoItem name="../public/marquee/soldo.png" />
+						<LogoItem name="../public/marquee/wenodo.png" />
+						<LogoItem name="../public/marquee/finn.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Hero;

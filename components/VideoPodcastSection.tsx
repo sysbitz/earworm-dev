@@ -1,163 +1,161 @@
-import React, { useState, useRef } from 'react';
-import { 
-  Play,
-  MessageCircle, 
-  Share2, 
-  Clapperboard,
-} from 'lucide-react';
+import React, { useState, useRef } from "react";
+import { Play, MessageCircle, Share2, Clapperboard } from "lucide-react";
 
 // Simple Video Player Component - Play button only
 const CustomVideoPlayer: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+	const videoRef = useRef<HTMLVideoElement>(null);
+	const [isPlaying, setIsPlaying] = useState(false);
 
-  const videoSrc = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
-  const posterSrc = "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=2400&auto=format&fit=crop";
+	const videoSrc =
+		"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+	const posterSrc = "../public/video_layer.png";
 
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
+	const togglePlay = () => {
+		if (!videoRef.current) return;
 
-  return (
-    <div className="relative w-full aspect-video md:aspect-[2.35/1] rounded-[40px] overflow-hidden border border-white/30 bg-black group">
-      {/* Video Element */}
-      <video
-        ref={videoRef}
-        src={videoSrc}
-        poster={posterSrc}
-        className="w-full h-full object-cover"
-        onClick={togglePlay}
-        playsInline
-      />
+		if (isPlaying) {
+			videoRef.current.pause();
+		} else {
+			videoRef.current.play();
+		}
+		setIsPlaying(!isPlaying);
+	};
 
-      {/* Center Play Button (when paused) */}
-      {!isPlaying && (
-        <div 
-          className="absolute inset-0 flex items-center justify-center cursor-pointer"
-          onClick={togglePlay}
-        >
-          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center pl-2 transition-transform duration-300 hover:scale-110 hover:bg-white/20">
-            <Play className="w-8 h-8 md:w-10 md:h-10 text-white fill-white" />
-          </div>
-        </div>
-      )}
-    </div>
-  );
+	return (
+		<div className="relative w-full aspect-video md:aspect-[2.35/1] rounded-[40px] overflow-hidden border border-white/30 bg-black group">
+			{/* Video Element */}
+			<video
+				ref={videoRef}
+				src={videoSrc}
+				poster={posterSrc}
+				className="w-full h-full object-cover"
+				onClick={togglePlay}
+				playsInline
+			/>
+
+			{/* Center Play Button (when paused) */}
+			{!isPlaying && (
+				<div
+					className="absolute inset-0 flex items-center justify-center cursor-pointer"
+					onClick={togglePlay}>
+					<div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center pl-2 transition-transform duration-300 hover:scale-110 hover:bg-white/20">
+						<Play className="w-8 h-8 md:w-10 md:h-10 text-white fill-white" />
+					</div>
+				</div>
+			)}
+		</div>
+	);
 };
 
 const FeatureCard: React.FC<{
-  icon: string;
-  title: string;
-  description: string;
+	icon: string;
+	title: string;
+	description: string;
 }> = ({ icon, title, description }) => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
+	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+	const [isHovered, setIsHovered] = useState(false);
+	const cardRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    setMousePosition({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-  };
+	const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+		if (!cardRef.current) return;
+		const rect = cardRef.current.getBoundingClientRect();
+		setMousePosition({
+			x: e.clientX - rect.left,
+			y: e.clientY - rect.top,
+		});
+	};
 
-  return (
-    <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="relative group cursor-pointer"
-    >
-      {/* Gradient Border Effect */}
-      <div
-        className="absolute -inset-[1px] rounded-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-        style={{
-          background: `radial-gradient(600px circle at ${mousePosition?.x || 0}px ${mousePosition?.y || 0}px, rgba(255,255,255,0.15), transparent 40%)`,
-        }}
-      />
+	return (
+		<div
+			ref={cardRef}
+			onMouseMove={handleMouseMove}
+			onMouseEnter={() => setIsHovered(true)}
+			onMouseLeave={() => setIsHovered(false)}
+			className="relative group cursor-pointer">
+			{/* Gradient Border Effect */}
+			<div
+				className="absolute -inset-[1px] rounded-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+				style={{
+					background: `radial-gradient(600px circle at ${mousePosition?.x || 0}px ${mousePosition?.y || 0}px, rgba(255,255,255,0.15), transparent 40%)`,
+				}}
+			/>
 
-      {/* Card */}
-      <div
-        className="
-      relative
-      bg-[#0D0D0D]
-      rounded-[24px]
-      p-10
-      flex
-      flex-col
-      h-full
-      border
-      border-white/[0.08]
-      overflow-hidden
-      transition-all
-      duration-500
-      group-hover:border-white/20
-      shadow-[0_20px_40px_rgba(0,0,0,0.6)]
-    "
-      >
-        {/* Static top glow (always visible, subtle) */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,0.06), transparent 60%)",
-          }}
-        />
+			{/* Card */}
+			<div
+				className="relative rounded-[24px] p-10 flex flex-col h-full overflow-hidden transition-all duration-500 group-hover:border-white/25"
+				style={{
+					background:
+						"linear-gradient(160deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 40%, rgba(0,0,0,0.35) 100%)",
+					border: "1px solid rgba(255,255,255,0.12)",
+					boxShadow:
+						"inset 0 1px 0 rgba(255,255,255,0.13), inset 0 -1px 0 rgba(0,0,0,0.2), 0 20px 40px rgba(0,0,0,0.6)",
+					backdropFilter: "blur(20px)",
+				}}>
+				{/* Top border shine */}
+				<div
+					className="absolute top-0 left-0 right-0 h-px pointer-events-none"
+					style={{
+						background:
+							"linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.45) 40%, rgba(255,255,255,0.15) 70%, transparent 100%)",
+					}}
+				/>
 
-        {/* Icon - Glass */}
-        <div
-          className="
-        relative z-10
-        w-12 h-12
-        rounded-full
-        mb-10
-        flex items-center justify-center
-        bg-white/10
-        backdrop-blur-md
-        border border-white/20
-        text-white/80
-        transition-all duration-300
-        group-hover:text-white
-        group-hover:border-white/50
-      "
-        >
-          <img src={icon} alt="" className='w-[20px]'/>
-        </div>
+				{/* Inner glass sheen */}
+				<div
+					className="absolute top-0 left-0 w-full h-1/2 pointer-events-none"
+					style={{
+						background:
+							"linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 100%)",
+					}}
+				/>
 
-        {/* Title */}
-        <h3 className="relative z-10 text-[20px] font-semibold text-white mb-3">
-          {title}
-        </h3>
+				{/* Mouse-tracked glow */}
+				<div
+					className="absolute inset-0 pointer-events-none transition-opacity duration-700"
+					style={{
+						background: isHovered
+							? `radial-gradient(ellipse 120% 60% at ${mousePosition.x}px 0px, rgba(255,255,255,0.10), rgba(255,255,255,0.03) 50%, transparent 75%)`
+							: `radial-gradient(ellipse 120% 60% at 50% 0%, rgba(255,255,255,0.07), rgba(255,255,255,0.02) 50%, transparent 75%)`,
+					}}
+				/>
 
-        {/* Description */}
-        <p className="relative z-10 text-gray-400 text-[15px] leading-relaxed group-hover:text-gray-300 transition-colors">
-          {description}
-        </p>
-      </div>
-    </div>
-  );
+				{/* Icon - Glass */}
+				<div
+					className="relative z-10 w-12 h-12 rounded-full mb-10 flex items-center justify-center transition-all duration-300"
+					style={{
+						background:
+							"linear-gradient(145deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.05) 100%)",
+						border: "1px solid rgba(255,255,255,0.22)",
+						boxShadow:
+							"inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -1px 0 rgba(0,0,0,0.15), 0 4px 16px rgba(0,0,0,0.4)",
+						backdropFilter: "blur(12px)",
+					}}>
+					<img src={icon} alt="" className="w-[20px]" />
+				</div>
+
+				{/* Title */}
+				<h3 className="relative z-10 text-[20px] font-semibold text-white mb-3">
+					{title}
+				</h3>
+
+				{/* Description */}
+				<p className="relative z-10 text-gray-400 text-[15px] leading-relaxed group-hover:text-gray-300 transition-colors">
+					{description}
+				</p>
+			</div>
+		</div>
+	);
 };
 
 const VideoPodcastSection: React.FC = () => {
-  return (
+	return (
 		<div className="bg-brand-black py-[60px] relative overflow-hidden">
-			{/* Right Purple Glow */}
-			<div
-				className="absolute top-0 right-0 w-[50%] h-full pointer-events-none z-0"
-				style={{
-					background:
-						"radial-gradient(70% 70% at 100% 50%, #8266FF, transparent 70%)",
-				}}
+			{/* Right Background Gradient SVG */}
+			<img
+				src="../public/marquee/bg-grad.svg"
+				alt=""
+				aria-hidden="true"
+				className="absolute top-0 right-[-100px] w-[50%] h-full pointer-events-none z-0 object-cover"
 			/>
 
 			{/* Background Glow - Top Right */}

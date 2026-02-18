@@ -126,17 +126,17 @@ const DepartmentsSection: React.FC = () => {
 										<div className="flex items-start gap-4 md:gap-6">
 											<div
 												className={`w-1 self-stretch rounded-full transition-colors duration-300 flex-shrink-0 ${
-													isActive ? "bg-[#6366F1]" : "bg-transparent"
+													isActive ? "bg-[#AB7AFF]" : "bg-transparent"
 												}`}></div>
 
 											<div className="flex-1">
 												<div className="flex items-center gap-4 mb-3">
 													<div
-														className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 ${
-															isActive
-																? "bg-[#F3F4F6] text-black"
-																: "bg-transparent text-gray-600"
-														}`}>
+														className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+														style={{
+															background: "rgba(13, 13, 13, 0.10)",
+															color: "#0D0D0D",
+														}}>
 														{dept.icon}
 													</div>
 													<h3
