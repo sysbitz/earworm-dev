@@ -33,7 +33,7 @@ const ServicesSection: React.FC = () => {
 						{/* Image Side */}
 						<div className="md:w-1/2 min-h-[300px] md:min-h-full overflow-hidden rounded-[24px]">
 							<img
-								src="../public/services_launch.png"
+								src="/services_launch.png"
 								alt="Launch Service"
 								className="w-full h-full object-cover"
 							/>
