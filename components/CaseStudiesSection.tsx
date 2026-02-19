@@ -98,7 +98,7 @@ const caseStudies: CaseStudy[] = [
 		id: "1",
 		clientLogo: <ClientLogo src="/logos/fntv-logo.png" alt="FNTV" />,
 		image:
-			"https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1000&auto=format&fit=crop",
+			"/podcast/FNTV.png",
 		video: "https://www.w3schools.com/html/mov_bbb.mp4",
 		title: "Carrier 2.0",
 		description: "Reimagining the logistics conversation.",
@@ -107,7 +107,7 @@ const caseStudies: CaseStudy[] = [
 		id: "2",
 		clientLogo: <ClientLogo src="/logos/polly-logo.png" alt="Polly" />,
 		image:
-			"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop",
+			"/podcast/Polly.png",
 		video: "https://www.w3schools.com/html/mov_bbb.mp4",
 		title: "Pretty Covered",
 		description: "Insurance doesn't have to be boring.",
@@ -116,7 +116,7 @@ const caseStudies: CaseStudy[] = [
 		id: "3",
 		clientLogo: <ClientLogo src="/logos/wenodo-logo.png" alt="Wanodo" />,
 		image:
-			"https://images.unsplash.com/photo-1478737270239-2f02b77ac6d5?q=80&w=1000&auto=format&fit=crop",
+			"/podcast/Wenodo.png",
 		video: "https://www.w3schools.com/html/mov_bbb.mp4",
 		title: "Dig In",
 		description: "A culinary journey exploring hidden stories.",
@@ -125,7 +125,7 @@ const caseStudies: CaseStudy[] = [
 		id: "4",
 		clientLogo: <ClientLogo src="/logos/pulsetto-logo.png" alt="Pulsetto" />,
 		image:
-			"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop",
+			"/podcast/Pulsetto.png",
 		video: "https://www.w3schools.com/html/mov_bbb.mp4",
 		title: "No Stress",
 		description: "Health-tech meets real talk.",
@@ -134,7 +134,7 @@ const caseStudies: CaseStudy[] = [
 		id: "5",
 		clientLogo: <ClientLogo src="/logos/soldo-logo.png" alt="Soldo" />,
 		image:
-			"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1000&auto=format&fit=crop",
+			"/podcast/Soldo.png",
 		video: "https://www.w3schools.com/html/mov_bbb.mp4",
 		title: "The CFO Playbook",
 		description: "Targeting the C-Suite with high-value insights.",
@@ -145,7 +145,7 @@ const caseStudies: CaseStudy[] = [
 			<ClientLogo src="/logos/collyer-bristow-logo.png" alt="Collyer Bristow" />
 		),
 		image:
-			"https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop",
+			"/podcast/Collyer.png",
 		video: "https://www.w3schools.com/html/mov_bbb.mp4",
 		title: "UK/US Tax Talk",
 		description: "Complex legal topics made accessible.",

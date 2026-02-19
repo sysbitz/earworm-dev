@@ -54,7 +54,7 @@ const DepartmentsSection: React.FC = () => {
 	const isScrollingRef = useRef(false);
 	const sectionRef = useRef<HTMLDivElement>(null);
 
-	// Handle mouse wheel scroll with cooldown — only when cursor is inside the section
+	// Handle mouse wheel scroll — linear, no loop
 	useEffect(() => {
 		const section = sectionRef.current;
 		if (!section) return;
@@ -62,7 +62,6 @@ const DepartmentsSection: React.FC = () => {
 		const handleWheel = (event: WheelEvent) => {
 			if (isScrollingRef.current) return;
 
-			// Check if the wheel event cursor position is within the section bounds
 			const rect = section.getBoundingClientRect();
 			const insideSection =
 				event.clientX >= rect.left &&
@@ -72,19 +71,25 @@ const DepartmentsSection: React.FC = () => {
 
 			if (!insideSection) return;
 
-			isScrollingRef.current = true;
-
 			if (event.deltaY > 0) {
-				setActiveIndex((prev) => (prev + 1) % departments.length);
+				setActiveIndex((prev) => {
+					if (prev >= departments.length - 1) return prev;
+					isScrollingRef.current = true;
+					setTimeout(() => {
+						isScrollingRef.current = false;
+					}, 600);
+					return prev + 1;
+				});
 			} else {
-				setActiveIndex(
-					(prev) => (prev - 1 + departments.length) % departments.length
-				);
+				setActiveIndex((prev) => {
+					if (prev <= 0) return prev;
+					isScrollingRef.current = true;
+					setTimeout(() => {
+						isScrollingRef.current = false;
+					}, 600);
+					return prev - 1;
+				});
 			}
-
-			setTimeout(() => {
-				isScrollingRef.current = false;
-			}, 600);
 		};
 
 		window.addEventListener("wheel", handleWheel, { passive: true });
@@ -95,93 +100,115 @@ const DepartmentsSection: React.FC = () => {
 	}, []);
 
 	return (
-		<div className="bg-[#E6E8EB] pt-32 pb-24 -mt-20 relative z-10">
-			<div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+		<div className="bg-[#E6E8EB] pt-[100px] pb-12 -mt-20 relative z-10">
+			<div className="max-w-[1280px] mx-auto px-2 lg:px-2">
 				{/* Header */}
-				<div className="mb-16">
-					<h2 className="text-[32px] lg:text-[56px] font-display font-medium text-[#0A0A0A] mb-6 tracking-tight leading-[1.2] max-w-3xl">
+				<div className="mb-8 text-center">
+					<h2 className="text-[32px] lg:text-[56px] font-display font-medium text-[#0A0A0A] mb-4 tracking-tight leading-[1.2]">
 						Video content that supports <br />
 						your entire organisation
 					</h2>
-					<p className="text-[#4A4A4A] text-[20px] leading-[1.5] max-w-2xl">
+					<p className="text-[#4A4A4A] text-[18px] leading-[1.5] max-w-2xl mx-auto">
 						We do two things: launch video podcasts properly, and run them as
 						long-term business assets.
 					</p>
 				</div>
 
-				{/* Main Content Card */}
+				{/* Glass Wrapper */}
 				<div
-					ref={sectionRef}
-					className="bg-white rounded-[40px] shadow-2xl shadow-black/5 overflow-hidden flex flex-col lg:flex-row min-h-[600px] transition-all duration-500 ease-in-out">
-					{/* Left Side: Tabs */}
-					<div className="lg:w-[45%] p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-						<div className="space-y-2">
-							{departments.map((dept, index) => {
-								const isActive = activeIndex === index;
-								return (
-									<div
-										key={dept.id}
-										onClick={() => setActiveIndex(index)}
-										className="cursor-pointer transition-all duration-300 py-4">
-										<div className="flex items-start gap-4 md:gap-6">
-											<div
-												className={`w-1 self-stretch rounded-full transition-colors duration-300 flex-shrink-0 ${
-													isActive ? "bg-[#AB7AFF]" : "bg-transparent"
-												}`}></div>
-
-											<div className="flex-1">
-												<div className="flex items-center gap-4 mb-3">
-													<div
-														className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
-														style={{
-															background: "rgba(13, 13, 13, 0.10)",
-															color: "#0D0D0D",
-														}}>
-														{dept.icon}
-													</div>
-													<h3
-														className={`text-[28px] font-bold font-display tracking-tight ${
-															isActive ? "text-black" : "text-gray-700"
-														}`}>
-														{dept.title}
-													</h3>
-												</div>
-
+					className="p-8"
+					style={{
+						borderRadius: "48px",
+						background: "rgba(255, 255, 255, 0.35)",
+						backdropFilter: "blur(20px)",
+						WebkitBackdropFilter: "blur(20px)",
+						border: "1px solid rgba(255, 255, 255, 0.6)",
+						boxShadow:
+							"0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255,255,255,0.8)",
+					}}>
+					{/* Main Content Card */}
+					<div
+						ref={sectionRef}
+						className="bg-white shadow-xl shadow-black/5 overflow-hidden flex flex-col lg:flex-row h-[580px]"
+						style={{ borderRadius: "24px" }}>
+						{/* Left Side: Tabs */}
+						<div className="lg:w-[45%] p-6 md:p-8 lg:p-10 flex flex-col justify-center">
+							<div className="space-y-2">
+								{departments.map((dept, index) => {
+									const isActive = activeIndex === index;
+									return (
+										<div
+											key={dept.id}
+											onClick={() => setActiveIndex(index)}
+											className="cursor-pointer transition-all duration-300 py-4">
+											<div className="flex items-start gap-4 md:gap-6">
 												<div
-													className={`overflow-hidden transition-all duration-500 ease-in-out ${
-														isActive
-															? "max-h-[200px] opacity-100"
-															: "max-h-0 opacity-0"
-													}`}>
-													<p className="text-[#4A4A4A] text-[16px] leading-relaxed pl-[56px]">
-														{dept.description}
-													</p>
+													className={`w-1 self-stretch rounded-full transition-colors duration-300 flex-shrink-0 ${
+														isActive ? "bg-[#AB7AFF]" : "bg-transparent"
+													}`}></div>
+
+												<div className="flex-1">
+													<div className="flex items-center gap-4 mb-3">
+														<div
+															className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+															style={{
+																background: "rgba(13, 13, 13, 0.10)",
+																color: "#0D0D0D",
+															}}>
+															{dept.icon}
+														</div>
+														<h3
+															className={`text-[28px] font-bold font-display tracking-tight ${
+																isActive ? "text-black" : "text-gray-700"
+															}`}>
+															{dept.title}
+														</h3>
+													</div>
+
+													<div
+														className={`grid transition-all duration-500 ease-in-out ${
+															isActive
+																? "grid-rows-[1fr] opacity-100"
+																: "grid-rows-[0fr] opacity-0"
+														}`}>
+														<div className="overflow-hidden">
+															<p className="text-[#4A4A4A] text-[16px] leading-relaxed pl-[56px] pb-1">
+																{dept.description}
+															</p>
+														</div>
+													</div>
 												</div>
 											</div>
+											{!isActive && (
+												<div className="ml-[60px] mt-4 h-px bg-gray-100"></div>
+											)}
 										</div>
-										{!isActive && (
-											<div className="ml-[60px] mt-4 h-px bg-gray-100"></div>
-										)}
-									</div>
-								);
-							})}
+									);
+								})}
+							</div>
+						</div>
+
+						{/* Right Side: Crossfade Images */}
+						<div
+							className="lg:w-[55%] relative h-full min-h-[400px] bg-gray-100 overflow-hidden"
+							style={{ borderRadius: "0 24px 24px 0" }}>
+							{departments.map((dept, index) => (
+								<img
+									key={dept.id}
+									src={dept.image}
+									alt={dept.title}
+									className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
+										activeIndex === index
+											? "opacity-100 scale-100"
+											: "opacity-0 scale-105"
+									}`}
+								/>
+							))}
 						</div>
 					</div>
-
-					{/* Right Side: Crossfade Images */}
-					<div className="lg:w-[55%] relative min-h-[400px] lg:min-h-full bg-gray-100 overflow-hidden">
-						{departments.map((dept, index) => (
-							<img
-								key={dept.id}
-								src={dept.image}
-								alt={dept.title}
-								className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-									activeIndex === index ? "opacity-100" : "opacity-0"
-								}`}
-							/>
-						))}
-					</div>
+					{/* end main card */}
 				</div>
+				{/* end glass wrapper */}
 			</div>
 		</div>
 	);

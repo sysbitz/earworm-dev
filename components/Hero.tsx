@@ -1,33 +1,76 @@
 import React from "react";
 
-const LogoItem: React.FC<{
-  name: string;
-  corner?: boolean;
-}> = ({ name, corner = true }) => (
-  <div className="relative group h-10 lg:h-16 flex items-center justify-center px-2">
-    {/* Corner markers - Only show if corner is true */}
-    {corner && (
-      <>
-        <div className="absolute top-0 left-0 w-1.5 h-1.5 border-t border-l border-white/20"></div>
-        <div className="absolute top-0 right-0 w-1.5 h-1.5 border-t border-r border-white/20"></div>
-        <div className="absolute bottom-0 left-0 w-1.5 h-1.5 border-b border-l border-white/20"></div>
-        <div className="absolute bottom-0 right-0 w-1.5 h-1.5 border-b border-r border-white/20"></div>
-      </>
-    )}
+const logos = [
+	"/marquee/lucky-saint.png",
+	"/marquee/kpmg.png",
+	"/marquee/cisco.png",
+	"/marquee/ig.png",
+	"/marquee/soldo.png",
+	"/marquee/wenodo.png",
+	"/marquee/finn.png",
+];
 
-    <div className="px-4 lg:px-6 w-full flex items-center justify-center opacity-70 group-hover:opacity-100 transition-opacity">
-      <span className="font-sans font-bold tracking-wider text-white whitespace-nowrap">
-        <img src={name} alt="" className=" w-16" />
-      </span>
-    </div>
-  </div>
+const LogoItem: React.FC<{ name: string }> = ({ name }) => (
+	<div
+		className="relative flex-shrink-0 h-10 lg:h-16 flex items-center justify-center px-2"
+		style={{ minWidth: "100px" }}>
+		{/* Corner bracket markers - 1px stroke rgba(255,255,255,0.30) */}
+		<div
+			className="absolute top-0 left-0 w-3 h-3"
+			style={{
+				borderTop: "1px solid rgba(255,255,255,0.30)",
+				borderLeft: "1px solid rgba(255,255,255,0.30)",
+			}}></div>
+		<div
+			className="absolute top-0 right-0 w-3 h-3"
+			style={{
+				borderTop: "1px solid rgba(255,255,255,0.30)",
+				borderRight: "1px solid rgba(255,255,255,0.30)",
+			}}></div>
+		<div
+			className="absolute bottom-0 left-0 w-3 h-3"
+			style={{
+				borderBottom: "1px solid rgba(255,255,255,0.30)",
+				borderLeft: "1px solid rgba(255,255,255,0.30)",
+			}}></div>
+		<div
+			className="absolute bottom-0 right-0 w-3 h-3"
+			style={{
+				borderBottom: "1px solid rgba(255,255,255,0.30)",
+				borderRight: "1px solid rgba(255,255,255,0.30)",
+			}}></div>
+
+		<div className="px-4 lg:px-6 w-full flex items-center justify-center">
+			<img
+				src={name}
+				alt=""
+				className="w-16 object-contain"
+				style={{ filter: "brightness(0) invert(1)" }}
+			/>
+		</div>
+	</div>
 );
 
 const Hero: React.FC = () => {
-  return (
-		<div className="relative bg-brand-black min-h-screen flex flex-col pt-[120px]">
-			{/* Background Glow Effect - Positioned behind text */}
-			<div className="absolute top-0 left-0 max-w-[1280px] bg-glow-effect pointer-events-none -translate-x-1/4 -translate-y-1/4 z-0 opacity-80"></div>
+	return (
+		<div
+			className="relative min-h-screen flex flex-col pt-[120px] overflow-hidden"
+			style={{ backgroundColor: "#000000" }}>
+			{/* Background Glow Effect — dark teal radial glow */}
+			<div
+				className="absolute pointer-events-none z-0"
+				style={{
+					top: "-10%",
+					left: "-5%",
+					width: "75vw",
+					height: "75vw",
+					maxWidth: "900px",
+					maxHeight: "900px",
+					background:
+						"radial-gradient(ellipse at 55% 40%, rgba(13, 80, 55, 0.75) 0%, rgba(10, 55, 38, 0.5) 25%, rgba(5, 30, 20, 0.3) 50%, transparent 70%)",
+					filter: "blur(40px)",
+				}}
+			/>
 
 			<div className="w-full max-w-[1280px] mx-auto px-6 lg:px-0 z-10 flex-grow flex flex-col">
 				<div className="flex flex-col lg:flex-row items-center justify-between pt-8 lg:pt-20 pb-[120px] lg:pb-0 flex-grow">
@@ -48,18 +91,17 @@ const Hero: React.FC = () => {
 						<div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
 							<button className="group flex items-center justify-between gap-3 rounded-[50px] bg-[linear-gradient(264deg,#FFF_-74.9%,#645BEF_64.18%)] text-lg font-medium text-white transition-all hover:opacity-90 shadow-[0_0_20px_rgba(99,102,241,0.3)]">
 								<span className="py-[14px] pl-[20px]">Chat to the team</span>
-
 								<div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/20 bg-black transition-transform group-hover:scale-105 mr-[4px] my-[4px]">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										fill="none"
 										viewBox="0 0 24 24"
-										stroke-width="2"
+										strokeWidth="2"
 										stroke="currentColor"
 										className="h-5 w-5 text-white">
 										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
+											strokeLinecap="round"
+											strokeLinejoin="round"
 											d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
 										/>
 									</svg>
@@ -67,22 +109,13 @@ const Hero: React.FC = () => {
 							</button>
 
 							<button
-								className="flex items-center gap-2
-             rounded-[50px]
-             border border-white/20
-             bg-white/10
-             backdrop-blur-xl
-             text-white text-xl font-semibold
-             shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-1px_0_rgba(0,0,0,0.2)]
-             relative overflow-hidden
-             transition-all duration-300
-             hover:bg-white/15 hover:shadow-[0_12px_40px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.25)]
-             pr-[5px] pl-[24px] py-[5px]"
+								className="flex items-center gap-2 rounded-[50px] border border-white/20 backdrop-blur-xl text-white text-xl font-semibold relative overflow-hidden transition-all duration-300 pr-[5px] pl-[24px] py-[5px]"
 								style={{
 									background:
 										"linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)",
+									boxShadow:
+										"0 8px 32px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 0 rgba(0,0,0,0.2)",
 								}}>
-								{/* Glass sheen overlay */}
 								<span
 									className="absolute inset-0 rounded-[50px] pointer-events-none"
 									style={{
@@ -90,15 +123,9 @@ const Hero: React.FC = () => {
 											"linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%)",
 									}}
 								/>
-
 								<span className="relative z-10 py-2">Watch showreel</span>
-
 								<span
-									className="relative z-10 flex items-center justify-center
-             w-12 h-12
-             rounded-full
-             border border-white/25
-             flex-shrink-0"
+									className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full border border-white/25 flex-shrink-0"
 									style={{
 										background:
 											"linear-gradient(145deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.08) 100%)",
@@ -112,12 +139,10 @@ const Hero: React.FC = () => {
 					</div>
 
 					{/* Right Image Composition */}
-					{/* Fixed: Use flex layout instead of absolute positioning on desktop to prevent overlap */}
 					<div className="flex-1 w-full lg:w-auto mt-16 lg:mt-0 flex items-center justify-center lg:justify-end relative z-10 overflow-visible">
 						<div
 							className="relative overflow-visible"
 							style={{ width: "489px", height: "447px" }}>
-							{/* Ellipse glow effects - using same approach as TestimonialsSection */}
 							<img
 								src="/Ellipse 11.png"
 								alt=""
@@ -143,7 +168,7 @@ const Hero: React.FC = () => {
 								}}
 							/>
 
-							{/* Shape 1: Capsule (Left) - Man with microphone - 230.37x447px */}
+							{/* Shape 1: Capsule (Left) */}
 							<div
 								className="absolute z-20 overflow-hidden"
 								style={{
@@ -160,7 +185,7 @@ const Hero: React.FC = () => {
 								/>
 							</div>
 
-							{/* Shape 2: Circle (Right, Higher) - Red studio - 230.37x230.37px */}
+							{/* Shape 2: Circle (Right, Higher) */}
 							<div
 								className="absolute z-30 overflow-hidden"
 								style={{
@@ -187,17 +212,45 @@ const Hero: React.FC = () => {
 						clever businesses
 					</p>
 
-					<div className="flex flex-wrap justify-between gap-x-8 gap-y-6 lg:gap-8 w-full mx-auto opacity-80">
-						<LogoItem name="/marquee/lucky-saint.png" />
-						<LogoItem name="/marquee/kpmg.png" />
-						<LogoItem name="/marquee/cisco.png" />
-						<LogoItem name="/marquee/ig.png" />
-						<LogoItem name="/marquee/soldo.png" />
-						<LogoItem name="/marquee/wenodo.png" />
-						<LogoItem name="/marquee/finn.png" />
+					{/* Marquee container */}
+					<div className="relative w-full overflow-hidden">
+						{/* Fade edges */}
+						<div
+							className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+							style={{
+								background: "linear-gradient(to right, #000000, transparent)",
+							}}
+						/>
+						<div
+							className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+							style={{
+								background: "linear-gradient(to left, #000000, transparent)",
+							}}
+						/>
+
+						{/* Marquee track */}
+						<div
+							className="flex gap-16"
+							style={{
+								animation: "marquee 28s linear infinite",
+								width: "max-content",
+							}}>
+							{/* Double the logos for seamless loop */}
+							{[...logos, ...logos].map((logo, i) => (
+								<LogoItem key={i} name={logo} />
+							))}
+						</div>
 					</div>
 				</div>
 			</div>
+
+			{/* Marquee keyframes */}
+			<style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
 		</div>
 	);
 };

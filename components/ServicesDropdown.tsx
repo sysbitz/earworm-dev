@@ -8,141 +8,90 @@ interface ServicesDropdownProps {
 const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isOpen }) => {
 	if (!isOpen) return null;
 
+	const services = [
+		{
+			icon: <Target size={18} color="#818cf8" />,
+			title: "Strategy & Planning",
+			desc: "Podcast strategy · Episode planning · Research · Guest sourcing",
+		},
+		{
+			icon: <Zap size={18} color="#818cf8" />,
+			title: "Production & Creative",
+			desc: "Video & audio production · Graphic design · Motion graphics",
+		},
+		{
+			icon: <BarChart3 size={18} color="#818cf8" />,
+			title: "Distribution & Insight",
+			desc: "Publishing & distribution · Analytics & reporting · Audience insights",
+		},
+	];
+
 	return (
-		<div
-			className="fixed top-[88px] left-1/2 -translate-x-1/2 border border-white/10 rounded-2xl shadow-2xl shadow-black/50 p-8 z-[999] overflow-hidden w-[920px]"
-			style={{
-				backgroundColor: "rgba(30,30,30, 0.88)",
-				backdropFilter: "blur(10px) saturate(180%) brightness(1.1)",
-				boxShadow:
-					"0 8px 64px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06)",
-			}}>
-			{/* Soft glass effect overlay at bottom */}
-			<div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white/[0.03] to-transparent rounded-b-2xl pointer-events-none"></div>
+		<div className="fixed top-[88px] left-1/2 -translate-x-1/2 z-[999] w-[960px] flex overflow-hidden rounded-2xl border border-white/10 bg-[rgba(20,20,20,0.95)] backdrop-blur-xl">
+			{/* Col 1 — Launch */}
+			<div className="flex flex-1 flex-col p-4 pb-7">
+				<img
+					src="/services1.png"
+					alt="Launch"
+					className="mb-[18px] h-[200px] w-full rounded-xl object-cover"
+				/>
+				<h3 className="mb-2 ml-1.5 text-[15px] font-semibold text-white">
+					Launch
+				</h3>
+				<p className="ml-1.5 text-[13px] leading-relaxed text-white/60">
+					We incubate, design, and launch podcasts that help businesses lead
+					conversations
+				</p>
+			</div>
 
-			<div className="grid grid-cols-3 gap-6 relative z-10">
-				{/* Left Column - Launch Card with image on top */}
-				<div className="border border-white/10 rounded-2xl bg-gradient-to-br from-white/5 to-transparent p-6 flex flex-col justify-between">
-					{/* Image at the top of Launch card */}
-					<div className="rounded-lg overflow-hidden mb-4">
-						<img
-							src="/services1.png"
-							alt="Launch showcase"
-							className="w-full h-36 object-cover hover:scale-105 transition-transform duration-300"
-						/>
-					</div>
-					<div>
-						<h3 className="text-lg font-bold text-white mb-4">Launch</h3>
-						<p className="text-sm text-gray-300 mb-6 leading-relaxed">
-							We incubate, design, and launch podcasts that help businesses lead
-							conversations
-						</p>
-						{/* <div className="space-y-3">
-							<div className="flex items-center text-green-400 text-sm font-semibold">
-								<span className="w-2 h-2 bg-green-400 rounded-full mr-2.5"></span>
-								Launch™
-							</div>
-							<div className="flex items-center text-gray-300 text-sm">
-								<span className="text-indigo-500 mr-2.5">•</span>
-								Strategy
-							</div>
-							<div className="flex items-center text-gray-300 text-sm">
-								<span className="text-indigo-500 mr-2.5">•</span>
-								Creative Direction
-							</div>
-							<div className="flex items-center text-gray-300 text-sm">
-								<span className="text-indigo-500 mr-2.5">•</span>
-								Production Setup
-							</div>
-							<div className="flex items-center text-gray-300 text-sm">
-								<span className="text-indigo-500 mr-2.5">•</span>
-								Host Training
-							</div>
-						</div> */}
-					</div>
-				</div>
+			{/* Divider 90% centered */}
+			<div className="flex items-center self-stretch py-[5%]">
+				<div className="w-px h-full bg-white/10" />
+			</div>
 
-				{/* Middle Column - Run & Scale Card with Image */}
-				<div className="border border-white/10 rounded-2xl bg-gradient-to-br from-white/5 to-transparent p-6 flex flex-col">
-					<h3 className="text-lg font-bold text-white mb-4">Run & scale</h3>
-					<p className="text-sm text-gray-300 mb-4 leading-relaxed">
-						We manage your podcast end-to-end, turning each episode into a
-						consistent, measurable growth channel.
-					</p>
+			{/* Col 2 — Run & scale */}
+			<div className="flex flex-1 flex-col p-4 pb-7">
+				<img
+					src="/services2.png"
+					alt="Run & scale"
+					className="mb-[18px] h-[200px] w-full rounded-xl object-cover"
+				/>
+				<h3 className="mb-2 ml-1.5 text-[15px] font-semibold text-white">
+					Run & scale
+				</h3>
+				<p className="ml-1.5 text-[13px] leading-relaxed text-white/60">
+					We manage your podcast end-to-end, turning each episode into a
+					consistent, measurable growth channel.
+				</p>
+			</div>
 
-					{/* Image in Run & Scale Card */}
-					<div className="rounded-lg overflow-hidden mb-4 flex-grow">
-						<img
-							src="/services2.png"
-							alt="Run and scale interface"
-							className="w-full h-40 object-cover"
-						/>
-					</div>
+			{/* Divider 90% centered */}
+			<div className="flex items-center self-stretch py-[5%]">
+				<div className="w-px h-full bg-white/10" />
+			</div>
 
-					{/* <div className="space-y-2.5">
-						<div className="flex items-center text-gray-300 text-sm">
-							<span className="text-indigo-500 mr-2.5">•</span>
-							Planning
-						</div>
-						<div className="flex items-center text-gray-300 text-sm">
-							<span className="text-indigo-500 mr-2.5">•</span>
-							Production
-						</div>
-						<div className="flex items-center text-gray-300 text-sm">
-							<span className="text-indigo-500 mr-2.5">•</span>
-							Distribution
-						</div>
-						<div className="flex items-center text-gray-300 text-sm">
-							<span className="text-indigo-500 mr-2.5">•</span>
-							Reporting
-						</div>
-					</div> */}
-				</div>
-
-				{/* Right Column - Services List only (image removed) */}
-				<div className="flex flex-col justify-between">
-					<div className="space-y-4">
-						{/* Service Item 1 */}
-						<div className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors cursor-pointer">
-							<Target className="w-5 h-5 text-indigo-500 flex-shrink-0 mt-0.5" />
+			{/* Col 3 — Services */}
+			<div className="flex flex-1 flex-col justify-center">
+				{services.map((item, i) => (
+					<React.Fragment key={i}>
+						{i > 0 && (
+							<div className="flex justify-center items-center px-[5%]">
+								<div className="h-px w-full bg-white/10" />
+							</div>
+						)}
+						<div className="flex items-start gap-3.5 px-6 py-[22px]">
+							<div className="mt-0.5 shrink-0">{item.icon}</div>
 							<div>
-								<h4 className="text-sm font-semibold text-white">
-									Strategy & Planning
+								<h4 className="mb-1.5 text-[13px] font-semibold text-white">
+									{item.title}
 								</h4>
-								<p className="text-xs text-gray-400 mt-1">
-									Podcast strategy • Episode planning • Research: Guest sourcing
+								<p className="text-xs leading-relaxed text-white/50">
+									{item.desc}
 								</p>
 							</div>
 						</div>
-
-						{/* Service Item 2 */}
-						<div className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors cursor-pointer">
-							<Zap className="w-5 h-5 text-indigo-500 flex-shrink-0 mt-0.5" />
-							<div>
-								<h4 className="text-sm font-semibold text-white">
-									Production & Creative
-								</h4>
-								<p className="text-xs text-gray-400 mt-1">
-									Video & audio production • Graphic design • Motion graphics
-								</p>
-							</div>
-						</div>
-
-						{/* Service Item 3 */}
-						<div className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors cursor-pointer">
-							<BarChart3 className="w-5 h-5 text-indigo-500 flex-shrink-0 mt-0.5" />
-							<div>
-								<h4 className="text-sm font-semibold text-white">
-									Distribution & Insight
-								</h4>
-								<p className="text-xs text-gray-400 mt-1">
-									Publishing & distribution • Analytics & reporting • Audience
-									insights
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
+					</React.Fragment>
+				))}
 			</div>
 		</div>
 	);
