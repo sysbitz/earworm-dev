@@ -101,7 +101,7 @@ const DepartmentsSection: React.FC = () => {
 			className="bg-[#E6E8EB] relative z-10 px-20 py-24"
 			style={{ height: totalHeight }}>
 			{/* Sticky shell — pins when the section TOP (title) reaches top:0 */}
-			<div className="sticky top-24 h-screen flex flex-col justify-center py-15 overflow-hidden">
+			<div className="sticky top-24 flex flex-col justify-center py-8 overflow-visible">
 				<div className="px-2 lg:px-2 w-full">
 					{/* Header */}
 					<div className="mb-16 text-center">
@@ -129,7 +129,7 @@ const DepartmentsSection: React.FC = () => {
 						}}>
 						{/* Main Content Card */}
 						<div
-							className="bg-white shadow-xl shadow-black/5 overflow-hidden flex flex-col lg:flex-row h-150"
+							className="bg-white shadow-xl shadow-black/5 overflow-hidden flex flex-col lg:flex-row h-[min(600px,calc(100vh-280px))]"
 							style={{ borderRadius: "24px" }}>
 							{/* Left Side: Tabs */}
 							<div className="lg:w-[70%] p-6 md:p-8 lg:p-10 flex flex-col justify-center">

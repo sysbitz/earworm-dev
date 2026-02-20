@@ -321,7 +321,8 @@ const ProcessSection: React.FC = () => {
 	];
 
 	return (
-		<div
+		<div className="bg-[#E4E5E9]">
+			<div
 			className="bg-[#0D0D0D] py-36 relative z-20 px-20"
 			style={{
 				borderBottomLeftRadius: "80px",
@@ -361,6 +362,8 @@ const ProcessSection: React.FC = () => {
 				</div>
 			</div>
 		</div>
+		</div>
+		
 	);
 };
 

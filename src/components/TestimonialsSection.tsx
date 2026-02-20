@@ -63,16 +63,13 @@ const TestimonialsSection: React.FC = () => {
 
 	return (
 		<div className="py-24 px-20 relative overflow-hidden">
-			
-		
-
 			<div className="px-6 lg:px-12 relative z-10">
 				{/* Header */}
 				<div className="text-center mb-16 relative">
-					<h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white tracking-tight leading-[1.2]">
+					<h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white tracking-tight nohemi leading-[1.2]">
 						See what our
 						<br />
-						<span className="text-brand-green relative inline-block mx-2">
+						<span className="text-brand-green relative inline-block mx-2 text-[#1CFA76] nohemi">
 							happy clients
 						</span>{" "}
 						are saying
@@ -110,7 +107,7 @@ const TestimonialsSection: React.FC = () => {
 					/>
 
 					{/* Left Image */}
-					<div className="w-full md:w-[340px] h-[280px] md:h-auto flex-shrink-0 relative rounded-[24px] overflow-hidden">
+					<div className="w-full md:w-85 h-70 md:h-auto shrink-0 relative rounded-3xl overflow-hidden">
 						<img
 							src={current.image}
 							alt={current.name}
@@ -118,24 +115,26 @@ const TestimonialsSection: React.FC = () => {
 						/>
 						{/* subtle vignette on image */}
 						<div
-							className="absolute inset-0 rounded-[24px]"
+							className="absolute inset-0 rounded-3xl"
 							style={{ boxShadow: "inset 0 0 40px rgba(0,0,0,0.3)" }}
 						/>
 					</div>
 
 					{/* Right Content */}
 					<div className="flex-1 flex flex-col justify-between py-8 px-8 md:px-10 relative z-10">
-						<blockquote className="text-[19px] md:text-[22px] font-sans text-white/90 leading-[1.7] mb-8">
+						<blockquote className="text-[19px] md:text-[22px] text-white/90 leading-[1.7] mb-8 geist">
 							"{current.quote}"
 						</blockquote>
 
 						<div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
 							<div className="flex items-center gap-5">
 								<div>
-									<h4 className="text-white font-bold text-[18px] mb-0.5">
+									<h4 className="text-white font-bold text-[18px] mb-0.5 geist">
 										{current.name}
 									</h4>
-									<p className="text-white/50 text-[14px]">{current.role}</p>
+									<p className="text-white/50 text-[14px] geist">
+										{current.role}
+									</p>
 								</div>
 
 								{/* Divider */}
@@ -179,30 +178,36 @@ const TestimonialsSection: React.FC = () => {
 				{/* Stats Row (fixed: no border line) */}
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10 text-center pt-12">
 					<div>
-						<div className="text-3xl md:text-[40px] font-display font-bold text-white mb-2 leading-normal">
+						<div className="text-3xl md:text-[40px] font-display font-bold text-white mb-2 leading-normal geist">
 							$5bn+
 						</div>
-						<div className="text-gray-500 text-[16px]">
+						<div className="text-gray-500 text-[16px] geist">
 							In yearly card spend
 						</div>
 					</div>
 					<div>
-						<div className="text-3xl md:text-[40px] font-display font-bold text-white mb-2 leading-normal">
+						<div className="text-3xl md:text-[40px] font-display font-bold text-white mb-2 leading-normal geist">
 							4m+
 						</div>
-						<div className="text-gray-500 text-[16px]">Virtual card issued</div>
+						<div className="text-gray-500 text-[16px] geist">
+							Virtual card issued
+						</div>
 					</div>
 					<div>
-						<div className="text-3xl md:text-[40px] font-display font-bold text-white mb-2 leading-[1.5]">
+						<div className="text-3xl md:text-[40px] font-display font-bold text-white mb-2 leading-normal geist">
 							3k+
 						</div>
-						<div className="text-gray-500 text-[16px]">Happy customers</div>
+						<div className="text-gray-500 text-[16px] geist">
+							Happy customers
+						</div>
 					</div>
 					<div className="relative">
-						<div className="text-3xl md:text-[40px] font-display font-bold text-white mb-2 leading-[1.5]">
+						<div className="text-3xl md:text-[40px] font-display font-bold text-white mb-2 leading-normal geist">
 							$100m+
 						</div>
-						<div className="text-gray-500 text-[16px]">Earned in cash back</div>
+						<div className="text-gray-500 text-[16px] geist">
+							Earned in cash back
+						</div>
 					</div>
 				</div>
 			</div>

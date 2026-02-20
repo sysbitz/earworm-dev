@@ -120,7 +120,7 @@ const Hero: React.FC = () => {
 											"linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%)",
 									}}
 								/>
-								<span className="relative z-10 py-2">Watch showreel</span>
+								<span className="relative z-10 py-2 geist">Watch showreel</span>
 								<span
 									className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full border border-white/25 shrink-0"
 									style={{

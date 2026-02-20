@@ -301,7 +301,7 @@ const CaseStudiesSection: React.FC = () => {
 						<h2 className="text-[32px] lg:text-[56px] nohemi font-medium text-white mb-5 tracking-tight leading-[1.2]">
 							Case studies
 						</h2>
-						<p className="text-[#E0E0E0] text-[20px]">
+						<p className="text-[#E0E0E0] text-[20px] geist">
 							We've launched hundreds of shows and measured the impact
 						</p>
 					</div>

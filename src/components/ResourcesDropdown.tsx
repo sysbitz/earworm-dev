@@ -39,7 +39,7 @@ const ResourcesDropdown: React.FC<ResourcesDropdownProps> = ({ isOpen }) => {
 
 	return (
 		<div
-			className="fixed top-22 left-1/2 -translate-x-1/2 z-999 w-247.5 flex rounded-3xl border border-white/13 p-10"
+			className="fixed top-22 left-1/2 -translate-x-1/2 z-999 w-260 flex rounded-3xl border border-white/13 p-10"
 			style={{
 				background:
 					"linear-gradient(135deg, rgba(15,15,15,0.55) 0%, rgba(10,10,10,0.60) 100%)",
