@@ -12,7 +12,7 @@ const logos = [
 
 const LogoItem: React.FC<{ name: string }> = ({ name }) => (
 	<div
-		className="relative flex-shrink-0 h-10 lg:h-16 flex items-center justify-center px-2"
+		className="relative shrink-0 h-10 lg:h-16 flex items-center justify-center px-2"
 		style={{ minWidth: "100px" }}>
 		{/* Corner bracket markers - 1px stroke rgba(255,255,255,0.30) */}
 		<div

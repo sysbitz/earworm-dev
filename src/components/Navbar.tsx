@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
 	const resourcesRef = useRef<HTMLDivElement>(null);
 	const servicesTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 	const resourcesTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
-		null
+		null,
 	);
 
 	useEffect(() => {
@@ -66,9 +66,9 @@ const Navbar: React.FC = () => {
 					style={{ backdropFilter: "blur(6px)" }}
 				/>
 			)}
-			<div className="fixed w-full z-50 top-6  pointer-events-none">
+			<div className="fixed w-full z-50 top-0  pointer-events-none px-20 py-10">
 				<nav
-					className="max-w-[1280px] w-full mx-auto rounded-full p-3 relative pointer-events-auto overflow-visible"
+					className=" w-full px-3 rounded-[50px] p-3 relative pointer-events-auto overflow-visible"
 					style={{
 						background:
 							"linear-gradient(135deg, rgba(15,15,15,0.35) 0%, rgba(10,10,10,0.40) 100%)",
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
 					}}>
 					<div className="flex items-center justify-between h-12">
 						{/* Logo */}
-						<div className="flex-shrink-0 cursor-pointer mr-2 lg:mr-8">
+						<div className="shrink-0 cursor-pointer mr-2 lg:mr-8">
 							<img
 								src="/earworm_logo_white_rgb_1080px_w_300ppi 1.png"
 								alt="Earworm"
@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
 									className="relative inline-block"
 									onMouseEnter={handleServicesEnter}
 									onMouseLeave={handleServicesLeave}>
-									<button className="flex items-center text-white hover:text-white px-4 py-2 text-[15px] font-medium transition-colors whitespace-nowrap">
+									<button className="flex items-center text-white hover:bg-white/10 rounded-full px-4 py-2 text-[15px] font-medium transition-all whitespace-nowrap">
 										Our service{" "}
 										<ChevronDown
 											className={`w-3.5 h-3.5 ml-1.5 opacity-60 mt-0.5 transition-transform duration-300 ${isServicesDropdownOpen ? "rotate-180" : ""}`}
@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
 									{/* Invisible bridge to fill gap between navbar and dropdown */}
 									{isServicesDropdownOpen && (
 										<div
-											className="fixed top-[72px] left-0 w-full h-6 z-[998]"
+											className="fixed top-18 left-0 w-full h-6 z-998"
 											onMouseEnter={handleServicesEnter}
 											onMouseLeave={handleServicesLeave}
 										/>
@@ -122,7 +122,8 @@ const Navbar: React.FC = () => {
 									className="relative inline-block"
 									onMouseEnter={handleResourcesEnter}
 									onMouseLeave={handleResourcesLeave}>
-									<button className="flex items-center text-white bg-white/10 hover:bg-white/20 rounded-full px-5 py-2 text-[15px] font-medium transition-all whitespace-nowrap">
+									<button
+										className={`flex items-center text-white rounded-full px-4 py-2 text-[15px] font-medium transition-all whitespace-nowrap ${isResourcesDropdownOpen ? "bg-white/20" : "hover:bg-white/10"}`}>
 										Resources{" "}
 										<ChevronDown
 											className={`w-3.5 h-3.5 ml-1.5 opacity-60 mt-0.5 transition-transform duration-300 ${isResourcesDropdownOpen ? "rotate-180" : ""}`}
@@ -133,12 +134,12 @@ const Navbar: React.FC = () => {
 
 								<a
 									href="#"
-									className="text-white hover:text-white px-4 py-2 text-[15px] font-medium transition-colors whitespace-nowrap">
+									className="text-white hover:bg-white/10 rounded-full px-4 py-2 text-[15px] font-medium transition-all whitespace-nowrap">
 									Case Studies
 								</a>
 								<a
 									href="#"
-									className="text-white hover:text-white px-4 py-2 text-[15px] font-medium transition-colors whitespace-nowrap">
+									className="text-white hover:bg-white/10 rounded-full px-4 py-2 text-[15px] font-medium transition-all whitespace-nowrap">
 									Our Story
 								</a>
 							</div>
