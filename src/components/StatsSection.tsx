@@ -150,7 +150,7 @@ const StatCard: React.FC<StatCardProps> = ({
 
 const StatsSection: React.FC = () => {
 	return (
-		<div className="bg-[#0D0D0D] pt-15 px-20 relative z-10">
+		<div className="bg-[#0D0D0D] py-30 px-20 relative z-10">
 			<div className=" mx-auto px-6 lg:px-0">
 				{/* Header */}
 				<div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-10">

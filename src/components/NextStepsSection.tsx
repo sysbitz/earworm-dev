@@ -7,7 +7,7 @@ const StepCard: React.FC<{
 	description: string;
 }> = ({ icon, title, description }) => (
 	<div
-		className="step-card-custom"
+		className="relative group rounded-2xl overflow-hidden p-8 flex flex-col"
 		style={{
 			background: "rgba(255, 255, 255, 0.07)",
 			backdropFilter: "blur(10px)",

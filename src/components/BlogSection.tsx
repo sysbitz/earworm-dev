@@ -193,7 +193,7 @@ const ViewAllButton: React.FC = () => {
 
 const BlogSection: React.FC = () => {
 	return (
-		<div className="bg-[#0D0D0D] py-24 px-20 border-t border-white/5 relative z-10">
+		<div className="bg-[#0D0D0D] py-24 px-20 relative z-10">
 			<div className=" px-6 lg:px-12">
 				{/* Header */}
 				<div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-8 text-center md:text-left">
@@ -201,7 +201,7 @@ const BlogSection: React.FC = () => {
 						<h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white mb-6 tracking-tight leading-[1.2] nohemi">
 							From the blog
 						</h2>
-						<p className="text-gray-400 text-[16px] md:text-[20px] leading-[1.5] max-w-sm mx-auto md:mx-0 geist">
+						<p className="text-gray-400 text-[16px] md:text-[20px] leading-normal max-w-sm mx-auto md:mx-0 geist">
 							Latest thinking on podcast strategy, guest booking, and B2B
 							content.
 						</p>

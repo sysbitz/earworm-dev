@@ -14,30 +14,33 @@ import CaseStudiesSection from "./components/CaseStudiesSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import ProductionPlannerSection from "./components/ProductionPlannerSection";
 import FAQSection from "./components/FAQSection";
+import SectionWrapper from "./components/SectionWrapper";
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Hero/>
-      <StatsSection></StatsSection>
-      <VideoPodcastSection></VideoPodcastSection>
-      <ProcessSection></ProcessSection>
-      <DepartmentsSection></DepartmentsSection>
-      <ServicesSection></ServicesSection>
-      <CaseStudiesSection></CaseStudiesSection>
-      <TestimonialsSection  ></TestimonialsSection>
-      <ProductionPlannerSection></ProductionPlannerSection>
-      <FAQSection></FAQSection>
+		<div>
+			<Navbar />
+			<Hero />
+			<StatsSection></StatsSection>
+			<VideoPodcastSection></VideoPodcastSection>
+			<ProcessSection></ProcessSection>
+			<DepartmentsSection></DepartmentsSection>
+			<ServicesSection></ServicesSection>
+			<SectionWrapper>
+				<CaseStudiesSection />
+				<TestimonialsSection />
+			</SectionWrapper>
+			{/* <CaseStudiesSection></CaseStudiesSection>
+      <TestimonialsSection  ></TestimonialsSection> */}
+			<ProductionPlannerSection></ProductionPlannerSection>
+			<FAQSection></FAQSection>
 
-        <BlogSection></BlogSection>
-        <ContactSection></ContactSection>
-        <NextStepsSection></NextStepsSection>
-      <Footer></Footer>
-      
-      
-    </div>
-  );
+			<BlogSection></BlogSection>
+			<ContactSection></ContactSection>
+			<NextStepsSection></NextStepsSection>
+			<Footer></Footer>
+		</div>
+	);
 };
 
 export default App;

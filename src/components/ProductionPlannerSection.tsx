@@ -2,14 +2,14 @@ import React from 'react';
 
 const ProductionPlannerSection: React.FC = () => {
   return (
-    <div className="bg-linear-to-b from-[#0D0D0D] via-[#050505] to-[#0D0D0D] py-15 relative overflow-hidden">
+    <div className="bg-linear-to-b from-[#0D0D0D] via-[#050505] to-[#0D0D0D] py-15 px-20 **:relative overflow-hidden">
       {/* Text Content */}
-      <div className="text-center mx-auto px-6 mb-16 relative z-10">
+      <div className="text-center px-6 mb-16 relative z-10">
         <h2 className="text-[32px] lg:text-[56px] font-medium text-white mb-5 leading-[1.2] nohemi">
           Access to an industry <br />
           leading production planner
         </h2>
-        <p className="text-[#E0E0E0] text-[20px] leading-[1.5] max-w-2xl mx-auto">
+        <p className="text-[#E0E0E0] text-[20px] leading-normal max-w-2xl mx-auto">
           Plan content, track updates & collaborate on ideas. PodPlanner brings
           teams together to deliver content that performs.
         </p>
@@ -28,9 +28,9 @@ const ProductionPlannerSection: React.FC = () => {
 
         {/* Production Planner Frame */}
         <img
-          src="/Frame 2.png"
+          src="/ipadf.png"
           alt="PodPlanner Production Interface"
-          className="mx-auto rounded-[24px] shadow-2xl"
+          className="mx-auto rounded-3xl shadow-2xl"
           style={{ width: "1280px", height: "784px", maxWidth: "100%" }}
         />
       </div>

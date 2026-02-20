@@ -149,7 +149,7 @@ const FeatureCard: React.FC<{
 
 const VideoPodcastSection: React.FC = () => {
 	return (
-    <div className="bg-[#0D0D0D] py-15 px-20 relative overflow-hidden">
+    <div className="bg-[#0D0D0D] py-15  px-20 relative overflow-hidden">
       {/* Right Background Gradient SVG */}
       <img
         src="/marquee/bg-grad.svg"

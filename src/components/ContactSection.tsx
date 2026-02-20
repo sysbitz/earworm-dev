@@ -1,6 +1,18 @@
 import React, { useState, useRef } from "react";
 import { ArrowRight, Volume2, Monitor, Zap, ChevronDown } from "lucide-react";
 
+const autofillStyle = `
+  .contact-input:-webkit-autofill,
+  .contact-input:-webkit-autofill:hover,
+  .contact-input:-webkit-autofill:focus,
+  .contact-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #1a1a1a inset !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+`;
+
 const ContactSection: React.FC = () => {
 	const [objective, setObjective] = useState("Brand Authority");
 	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -17,14 +29,14 @@ const ContactSection: React.FC = () => {
 	};
 
 	const inputClass =
-		"w-full bg-[#1a1a1a] border border-white/8 rounded-full px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-white/20 transition-colors text-[15px] geist";
+		"contact-input w-full bg-[#1a1a1a] border border-white/8 rounded-full px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-white/20 transition-colors text-[15px] geist";
 
 	const textareaClass =
-		"w-full bg-[#1a1a1a] border border-white/8 rounded-2xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-white/20 resize-none transition-colors text-[15px] geist";
+		"contact-input w-full bg-[#1a1a1a] border border-white/8 rounded-2xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-white/20 resize-none transition-colors text-[15px] geist";
 
 	const numberBadge = (n: number) => (
 		<div
-			className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-semibold flex-shrink-0"
+			className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-semibold shrink-0"
 			style={{
 				background:
 					"linear-gradient(145deg, rgba(60,60,60,0.9) 0%, rgba(20,20,20,0.95) 100%)",
@@ -37,17 +49,18 @@ const ContactSection: React.FC = () => {
 	);
 
 	return (
-		<div className="bg-[#0D0D0D] py-24 px-6 md:px-20 relative overflow-hidden border-t border-white/5">
+		<div className="bg-[#0D0D0D] py-24 px-6 md:px-20 relative overflow-hidden ">
+			<style>{autofillStyle}</style>
 			{/* Background glow */}
-			<div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-white/[0.03] blur-[120px] rounded-full pointer-events-none" />
+			<div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-125 bg-white/3 blur-[120px] rounded-full pointer-events-none" />
 
 			<div className="relative z-10">
 				{/* Header */}
 				<div className="text-center mb-16">
-					<h2 className="text-[32px] lg:text-[56px] font-medium text-white mb-6 tracking-tight leading-[1.2] nohemi">
+					<h2 className="text-[56px] lg:text-[56px] font-medium text-white mb-6 tracking-tight leading-[1.2] nohemi">
 						Let's get in Touch
 					</h2>
-					<p className="text-gray-400 text-[16px] geist">
+					<p className="text-gray-400 text-[20px] geist">
 						Have questions about our products or the latest promotions?{" "}
 						<br className="hidden md:block" />
 						Reach out to us via email for responsive support.
@@ -55,7 +68,7 @@ const ContactSection: React.FC = () => {
 				</div>
 
 				{/* Form Card */}
-				<div className="max-w-[720px] mx-auto">
+				<div className="max-w-4xl mx-auto">
 					<div
 						ref={cardRef}
 						onMouseMove={handleMouseMove}
@@ -64,7 +77,7 @@ const ContactSection: React.FC = () => {
 						className="relative group">
 						{/* Gradient border on hover */}
 						<div
-							className="absolute -inset-px rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"
+							className="absolute -inset-px rounded-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"
 							style={{
 								background: `radial-gradient(100px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.15), transparent 40%)`,
 							}}
@@ -74,12 +87,12 @@ const ContactSection: React.FC = () => {
 						<div
 							className="relative rounded-[28px] p-8 md:p-10 overflow-hidden z-10"
 							style={{
-								background: "rgba(255,255,255,0.05)",
-								backdropFilter: "blur(10px)",
-								WebkitBackdropFilter: "blur(10px)",
-								border: "1px solid rgba(255,255,255,0.08)",
+								background: "rgba(12,12,12,0.85)",
+								backdropFilter: "blur(24px)",
+								WebkitBackdropFilter: "blur(24px)",
+								border: "1px solid rgba(255,255,255,0.07)",
 								boxShadow:
-									"0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.10)",
+									"0 24px 80px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08)",
 							}}>
 							{/* Top specular highlight */}
 							<div
@@ -143,7 +156,7 @@ const ContactSection: React.FC = () => {
 											className={`p-5 rounded-2xl border text-left transition-all h-full ${
 												objective === id
 													? "bg-white/10 border-white/20"
-													: "bg-[#161616] border-white/[0.06] hover:border-white/15 hover:bg-white/[0.05]"
+													: "bg-[#161616] border-white/6 hover:border-white/15 hover:bg-white/5"
 											}`}>
 											<div
 												className={
