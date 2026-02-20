@@ -1,63 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Earworm - Video Podcasts for Business</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              display: ['Space Grotesk', 'sans-serif'],
-            },
-            colors: {
-              brand: {
-                black: '#080808', /* Slightly lighter than pure black for softness */
-                dark: '#0A0A0A',
-                gray: '#1F1F1F',
-                lime: '#D4FF00',
-                green: '#00D26A', /* Exact match for the design green */
-                purple: '#6C5CE7', /* Adjusted purple */
-                buttonPurple: '#6366F1'
-              }
-            },
-            backgroundImage: {
-              'hero-glow': 'radial-gradient(circle at 50% 50%, rgba(0, 210, 106, 0.15) 0%, rgba(8, 8, 8, 0) 70%)',
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        background-color: #080808;
-        color: #ffffff;
-        -webkit-font-smoothing: antialiased;
-      }
-      /* Custom utility for the exact glow effect */
-      .bg-glow-effect {
-        background: radial-gradient(circle at center, rgba(0, 210, 106, 0.12) 0%, rgba(0,0,0,0) 60%);
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.564.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
   <body>
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
