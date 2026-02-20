@@ -7,14 +7,13 @@ const StepCard: React.FC<{
 	description: string;
 }> = ({ icon, title, description }) => (
 	<div
-		className="relative overflow-hidden rounded-3xl p-8 flex flex-col h-full transition-all duration-300 group hover:-translate-y-1"
+		className="step-card-custom"
 		style={{
 			background: "rgba(255, 255, 255, 0.07)",
 			backdropFilter: "blur(10px)",
 			WebkitBackdropFilter: "blur(10px)",
 			border: "1px solid rgba(255,255,255,0.10)",
-			boxShadow:
-				"0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.12)",
+			boxShadow: "2px 0 8px 0 rgba(0,0,0,0.08)",
 		}}>
 		{/* Lamp light — top center glow */}
 		<div
@@ -75,7 +74,7 @@ const StepCard: React.FC<{
 const CalendarWidget = () => {
 	const [currentDate, setCurrentDate] = useState(new Date(2026, 1, 1)); // February 2026
 	const [selectedDate, setSelectedDate] = useState<Date | null>(
-		new Date(2026, 1, 4)
+		new Date(2026, 1, 4),
 	); // Feb 4, 2026
 	const [is24Hour, setIs24Hour] = useState(true);
 	const [selectedTime, setSelectedTime] = useState<string | null>(null);
@@ -121,7 +120,7 @@ const CalendarWidget = () => {
 
 	const prevMonth = () => {
 		setCurrentDate(
-			new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1)
+			new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1),
 		);
 		setSelectedDate(null);
 		setSelectedTime(null);
@@ -129,7 +128,7 @@ const CalendarWidget = () => {
 
 	const nextMonth = () => {
 		setCurrentDate(
-			new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1)
+			new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1),
 		);
 		setSelectedDate(null);
 		setSelectedTime(null);
@@ -139,7 +138,7 @@ const CalendarWidget = () => {
 		const newDate = new Date(
 			currentDate.getFullYear(),
 			currentDate.getMonth(),
-			day
+			day,
 		);
 		setSelectedDate(newDate);
 		setSelectedTime(null);
@@ -359,13 +358,15 @@ const NextStepsSection: React.FC = () => {
 					<h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white mb-4 tracking-tight leading-[1.2] nohemi">
 						What happens next?
 					</h2>
-					<p className="text-gray-400 text-[20px] leading-[1.5] geist">
+					<p className="text-gray-400 text-[20px] leading-[1.5] geist mb-0">
 						Our team reviews every inquiry personally.
 					</p>
 				</div>
 
 				{/* Steps Grid */}
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+				<div
+					className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-0"
+					style={{ marginTop: "40px" }}>
 					<StepCard
 						icon={
 							<img
@@ -404,7 +405,7 @@ const NextStepsSection: React.FC = () => {
 				{/* Earth Background Section */}
 				<div className="relative">
 					{/* Earth Illustration */}
-					<div className="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/4 w-[900px] h-[900px] pointer-events-none z-0">
+					<div className="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/4 w-[1200px] h-[1200px] pointer-events-none z-0">
 						<img
 							src="/earth.png"
 							alt=""
@@ -437,7 +438,7 @@ const NextStepsSection: React.FC = () => {
 					/>
 
 					{/* Transition to Calendar */}
-					<div className="text-center mb-16 relative z-10 pt-20">
+					<div className="text-center relative z-10 pt-20">
 						<h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white mb-6 tracking-tight leading-[1.2] nohemi">
 							Book a free 1:1 consultation <br />
 							with our workflow experts
@@ -450,7 +451,7 @@ const NextStepsSection: React.FC = () => {
 					</div>
 
 					{/* Calendar Embed */}
-					<div className="relative z-10">
+					<div className="relative z-10 max-w-[1280px] mx-auto flex flex-col items-start gap-[10px] py-[60px] pl-[18px] pr-[12px] mt-0">
 						<CalendarWidget />
 					</div>
 				</div>

@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
 	];
 
 	return (
-		<footer className="bg-[#050505] border-t border-white/5 pt-20 pb-10 font-sans px-4 ">
+		<footer className="bg-[#050505] pt-20 pb-10 font-sans px-4 ">
 			<div className="max-w-[1280px] mx-auto">
 				{/* Top Section */}
 				<div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-40 mb-20">
@@ -34,11 +34,44 @@ const Footer: React.FC = () => {
 								Get Updates
 							</h4>
 							<div className="relative max-w-md">
-								<input
-									type="email"
-									placeholder="E-MAIL"
-									className="w-full bg-[#111] border border-white/10 rounded-full py-4 pl-6 pr-36 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition-colors uppercase text-[16px] geist"
-								/>
+								<form
+									onSubmit={(e) => {
+										e.preventDefault();
+										const form = e.target as HTMLFormElement;
+										const input = form.elements.namedItem(
+											"footer-email",
+										) as HTMLInputElement;
+										if (!input.value.match(/^\S+@\S+\.\S+$/)) {
+											input.setCustomValidity(
+												"Please enter a valid email address.",
+											);
+											input.reportValidity();
+										} else {
+											input.setCustomValidity("");
+											// You can handle the email submission here
+											// e.g., send to API or show a success message
+										}
+									}}
+									className="relative max-w-md">
+									<input
+										type="email"
+										name="footer-email"
+										autoComplete="email"
+										placeholder="E-MAIL"
+										className="w-full bg-[#111] border border-white/10 rounded-full py-4 pl-6 pr-36 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition-colors text-[16px] geist"
+										style={{ textTransform: "none" }}
+										onInput={(e) => {
+											const input = e.currentTarget;
+											input.setCustomValidity("");
+										}}
+										required
+									/>
+									<button
+										type="submit"
+										className="absolute right-1.5 top-1.5 bottom-1.5 bg-white text-black font-bold rounded-full px-6 text-xs hover:bg-gray-200 transition-colors uppercase geist">
+										Subscribe
+									</button>
+								</form>
 								<button className="absolute right-1.5 top-1.5 bottom-1.5 bg-white text-black font-bold rounded-full px-6 text-xs hover:bg-gray-200 transition-colors uppercase geist">
 									Subscribe
 								</button>
@@ -132,7 +165,9 @@ const Footer: React.FC = () => {
 							/>
 						</div>
 						<div>
-							<h4 className="text-white text-lg font-medium mb-1 geist">US Office</h4>
+							<h4 className="text-white text-lg font-medium mb-1 geist">
+								US Office
+							</h4>
 							<p className="text-gray-400 text-sm leading-relaxed geist">
 								Earworm Agency 99 Wall Street #2421, New York, NY 10005
 							</p>
@@ -149,7 +184,9 @@ const Footer: React.FC = () => {
 							/>
 						</div>
 						<div>
-							<h4 className="text-white text-lg font-medium mb-1 geist">UK Office</h4>
+							<h4 className="text-white text-lg font-medium mb-1 geist">
+								UK Office
+							</h4>
 							<p className="text-gray-400 text-sm leading-relaxed geist">
 								Earworm Agency Ltd Generator Building, Bristol BS1 6BX
 							</p>
