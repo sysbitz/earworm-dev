@@ -45,7 +45,7 @@ const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isOpen }) => {
 
 	return (
 		<div
-			className="fixed top-[88px] left-1/2 -translate-x-1/2 z-[999] w-[1040px] flex rounded-3xl border border-white/[0.13] p-10"
+			className="fixed top-22 left-1/2 -translate-x-1/2 z-999 w-260 flex rounded-3xl border border-white/13 p-10"
 			style={{
 				background:
 					"linear-gradient(135deg, rgba(15,15,15,0.55) 0%, rgba(10,10,10,0.60) 100%)",
@@ -59,7 +59,7 @@ const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isOpen }) => {
 				<img
 					src="/services1.png"
 					alt="Launch"
-					className="mb-[18px] w-full rounded-xl object-cover object-top"
+					className="mb-4.5 w-full rounded-xl object-cover object-top"
 				/>
 				<h3 className="mb-2 geist text-[18px] font-bold text-white">Launch</h3>
 				<p className="geist text-[16px] leading-relaxed text-white/60">
@@ -78,7 +78,7 @@ const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isOpen }) => {
 				<img
 					src="/services2.png"
 					alt="Run & scale"
-					className="mb-[18px] w-full rounded-xl object-cover object-top"
+					className="mb-4.5 w-full rounded-xl object-cover object-top"
 				/>
 				<h3 className="mb-2 geist text-[18px] font-bold text-white">
 					Run & scale
@@ -99,7 +99,7 @@ const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isOpen }) => {
 				{services.map((item, i) => (
 					<React.Fragment key={i}>
 						{i > 0 && <div className="h-px w-full bg-white/10" />}
-						<div className="flex items-start gap-3.5 py-[22px]">
+						<div className="flex items-start gap-3.5 py-5.5">
 							<div className="shrink-0 mt-1">{item.icon}</div>
 							<div className="geist min-w-0">
 								<h4 className="mb-1.5 text-[18px] font-bold text-white">

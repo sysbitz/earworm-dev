@@ -193,8 +193,8 @@ const ViewAllButton: React.FC = () => {
 
 const BlogSection: React.FC = () => {
 	return (
-		<div className="bg-[#050505] py-24 border-t border-white/5 relative z-10">
-			<div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+		<div className="bg-[#0D0D0D] py-24 px-20 border-t border-white/5 relative z-10">
+			<div className=" px-6 lg:px-12">
 				{/* Header */}
 				<div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-8 text-center md:text-left">
 					<div className="max-w-xl">
@@ -211,7 +211,7 @@ const BlogSection: React.FC = () => {
 				</div>
 
 				{/* Grid */}
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 					{blogPosts.map((post) => (
 						<BlogCard key={post.id} post={post} />
 					))}

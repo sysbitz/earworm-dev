@@ -12,7 +12,7 @@ const logos = [
 
 const LogoItem: React.FC<{ name: string }> = ({ name }) => (
 	<div
-		className="relative shrink-0 h-10 lg:h-16 flex items-center justify-center px-2"
+		className="relative flex-shrink-0 h-10 lg:h-16 flex items-center justify-center px-2"
 		style={{ minWidth: "100px" }}>
 		{/* Corner bracket markers - 1px stroke rgba(255,255,255,0.30) */}
 		<div
@@ -54,44 +54,41 @@ const LogoItem: React.FC<{ name: string }> = ({ name }) => (
 const Hero: React.FC = () => {
 	return (
 		<div
-			className="relative min-h-screen flex flex-col pt-[120px] overflow-hidden"
-			style={{ backgroundColor: "#000000" }}>
-			{/* Background Glow Effect — dark teal radial glow */}
+			className="relative min-h-screen flex flex-col pt-30 px-20 overflow-hidden"
+			style={{ backgroundColor: "#0D0D0D" }}>
+			{/* Background Glow Effect — large teal radial blob, centered top-right behind images */}
 			<div
 				className="absolute pointer-events-none z-0"
 				style={{
-					top: "-10%",
-					left: "-5%",
-					width: "75vw",
-					height: "75vw",
-					maxWidth: "900px",
-					maxHeight: "900px",
+					top: "-20%",
+					right: "-10%",
+					width: "70vw",
+					height: "90vh",
 					background:
-						"radial-gradient(ellipse at 55% 40%, rgba(13, 80, 55, 0.75) 0%, rgba(10, 55, 38, 0.5) 25%, rgba(5, 30, 20, 0.3) 50%, transparent 70%)",
-					filter: "blur(40px)",
+						"radial-gradient(ellipse at 50% 35%, rgba(0, 120, 80, 0.85) 0%, rgba(0, 90, 60, 0.6) 20%, rgba(0, 60, 40, 0.35) 45%, transparent 70%)",
+					filter: "blur(60px)",
 				}}
 			/>
 
-			<div className="w-full max-w-[1280px] mx-auto px-6 lg:px-0 z-10 flex-grow flex flex-col">
-				<div className="flex flex-col lg:flex-row items-center justify-between pt-8 lg:pt-20 pb-[120px] lg:pb-0 flex-grow">
+			<div className="w-full px-6 lg:px-0 z-10 grow flex flex-col">
+				<div className="flex flex-col lg:flex-row items-center justify-between pt-8 lg:pt-20 pb-30 lg:pb-0 grow">
 					{/* Left Text Content */}
-					<div className="nohemi flex-1 text-center lg:text-left z-20 w-full lg:max-w-[50%]">
-						<h1 className="text-[38px] md:text-6xl lg:text-[72px] font-display font-bold tracking-tight text-white leading-[1.1] mb-6">
-							<span className="text-brand-green">Video podcasts</span> for{" "}
-							<br />
+					<div className="flex-1 text-center lg:text-left z-20 w-full lg:max-w-[50%]">
+						<h1 className="text-[38px] md:text-6xl lg:text-[72px] font-display font-bold tracking-tight text-white leading-[1.1] mb-6 nohemi">
+							<span className="text-[#1CFA76]">Video podcasts</span> for <br />
 							forward thinking <br />
 							businesses
 						</h1>
 
-						<p className="geist mt-6 lg:mt-[20px] mb-[40px] text-[16px] lg:text-[20px] text-gray-300 max-w-xl mx-auto lg:mx-0 font-normal leading-[1.5] px-2 lg:px-0">
+						<p className="mt-6 lg:mt-5 mb-10 text-[16px] lg:text-[18px] text-gray-300 max-w-xl mx-auto lg:mx-0 font-normal leading-normal px-2 lg:px-0 geist">
 							We plan, produce, and distribute strategic video podcasts that
 							build brand authority and support growth
 						</p>
 
-						<div className="geist flex flex-wrap items-center justify-center lg:justify-start gap-4">
-							<button className="group flex items-center justify-between gap-3 rounded-[50px] bg-[linear-gradient(264deg,#FFF_-74.9%,#645BEF_64.18%)] text-lg font-medium text-white transition-all hover:opacity-90 shadow-[0_0_20px_rgba(99,102,241,0.3)]">
-								<span className="py-[14px] pl-[20px]">Chat to the team</span>
-								<div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/20 bg-black transition-transform group-hover:scale-105 mr-[4px] my-[4px]">
+						<div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+							<button className="group flex items-center justify-between gap-3 rounded-[50px] bg-[linear-gradient(264deg,#FFF_-74.9%,#645BEF_64.18%)] text-lg font-medium text-white transition-all hover:opacity-90 shadow-[0_0_20px_rgba(99,102,241,0.3)] geist">
+								<span className="py-3.5 pl-5">Chat to the team</span>
+								<div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/20 bg-black transition-transform group-hover:scale-105 mr-1 my-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										fill="none"
@@ -109,7 +106,7 @@ const Hero: React.FC = () => {
 							</button>
 
 							<button
-								className="flex items-center gap-2 rounded-[50px] border border-white/20 backdrop-blur-xl text-white text-xl font-semibold relative overflow-hidden transition-all duration-300 pr-[5px] pl-[24px] py-[5px]"
+								className="flex items-center gap-2 rounded-[50px] border border-white/20 backdrop-blur-xl text-white text-xl font-semibold relative overflow-hidden transition-all duration-300 pr-1.25 pl-6 py-1.25"
 								style={{
 									background:
 										"linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)",
@@ -125,7 +122,7 @@ const Hero: React.FC = () => {
 								/>
 								<span className="relative z-10 py-2">Watch showreel</span>
 								<span
-									className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full border border-white/25 flex-shrink-0"
+									className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full border border-white/25 shrink-0"
 									style={{
 										background:
 											"linear-gradient(145deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.08) 100%)",
@@ -143,7 +140,7 @@ const Hero: React.FC = () => {
 						<div
 							className="relative overflow-visible"
 							style={{ width: "489px", height: "447px" }}>
-							<img
+							{/* <img
 								src="/Ellipse 11.png"
 								alt=""
 								className="absolute pointer-events-none opacity-30 blur-sm"
@@ -166,7 +163,7 @@ const Hero: React.FC = () => {
 									mixBlendMode: "screen",
 									zIndex: 0,
 								}}
-							/>
+							/> */}
 
 							{/* Shape 1: Capsule (Left) */}
 							<div
@@ -206,37 +203,39 @@ const Hero: React.FC = () => {
 				</div>
 
 				{/* Trusted By Section */}
-				<div className="geist pb-12 lg:pb-16 mt-[174px]">
-					<p className="text-center text-[16px] lg:text-[19px] text-white mb-[40px] lg:mb-12 font-medium">
+				<div className="pb-12 lg:pb-16 mt-43.5">
+					<p className="text-center text-[16px] lg:text-[19px] text-white mb-10 lg:mb-12 font-medium geist">
 						Trusted by <span className="text-[#1CF975] font-bold">100+</span>{" "}
 						clever businesses
 					</p>
 
 					{/* Marquee container */}
 					<div className="relative w-full overflow-hidden">
-						{/* Fade edges */}
+						{/* Fade left */}
 						<div
-							className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+							className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
 							style={{
-								background: "linear-gradient(to right, #000000, transparent)",
+								background: "linear-gradient(to right, #0D0D0D, transparent)",
 							}}
 						/>
+						{/* Fade right */}
 						<div
-							className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+							className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
 							style={{
-								background: "linear-gradient(to left, #000000, transparent)",
+								background: "linear-gradient(to left, #0D0D0D, transparent)",
 							}}
 						/>
 
-						{/* Marquee track */}
+						{/* Marquee: single strip of 3x logos so there's always content visible */}
 						<div
-							className="flex gap-16"
 							style={{
-								animation: "marquee 28s linear infinite",
+								display: "flex",
+								gap: "4rem",
 								width: "max-content",
+								animation: "marquee 28s linear infinite",
+								willChange: "transform",
 							}}>
-							{/* Double the logos for seamless loop */}
-							{[...logos, ...logos].map((logo, i) => (
+							{[...logos, ...logos, ...logos].map((logo, i) => (
 								<LogoItem key={i} name={logo} />
 							))}
 						</div>
@@ -247,8 +246,8 @@ const Hero: React.FC = () => {
 			{/* Marquee keyframes */}
 			<style>{`
         @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-33.333%); }
         }
       `}</style>
 		</div>

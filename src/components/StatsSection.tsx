@@ -78,7 +78,7 @@ const StatCard: React.FC<StatCardProps> = ({
 			onMouseMove={handleMouseMove}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
-			className="border border-white/20 rounded-[24px] p-8 md:p-[40px] flex flex-col h-full relative overflow-hidden group hover:border-white/30 transition-all duration-300"
+			className="border border-white/20 rounded-3xl p-8 md:p-10 flex flex-col h-full relative overflow-hidden group hover:border-white/30 transition-all duration-300"
 			style={{
 				background:
 					"linear-gradient(160deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 40%, rgba(0,0,0,0.4) 100%)",
@@ -134,7 +134,7 @@ const StatCard: React.FC<StatCardProps> = ({
 					</span>
 				</div>
 
-				<p className="text-gray-300 text-[20px] mb-[40px] leading-[1.5] font-sans font-normal geist">
+				<p className="text-gray-300 text-[20px] mb-10 leading-normal font-sans font-normal geist">
 					{description}
 				</p>
 
@@ -150,10 +150,10 @@ const StatCard: React.FC<StatCardProps> = ({
 
 const StatsSection: React.FC = () => {
 	return (
-		<div className="bg-black pt-[60px] relative z-10">
-			<div className="max-w-[1280px] mx-auto px-6 lg:px-0">
+		<div className="bg-[#0D0D0D] pt-15 px-20 relative z-10">
+			<div className=" mx-auto px-6 lg:px-0">
 				{/* Header */}
-				<div className="flex flex-col lg:flex-row justify-between items-start mb-[64px] gap-10">
+				<div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-10">
 					<h2 className="nohemi text-[32px] lg:text-[56px] font-display font-medium text-white tracking-tight leading-[1.2] max-w-4xl geist">
 						Why brands are investing <br className="hidden lg:block" />
 						in monthly podcast content
@@ -165,7 +165,7 @@ const StatsSection: React.FC = () => {
 				</div>
 
 				{/* Grid */}
-				<div className="geist grid grid-cols-1 md:grid-cols-3 gap-[20px]">
+				<div className="geist grid grid-cols-1 md:grid-cols-3 gap-5">
 					<StatCard
 						title="Buyers are listening"
 						stat="74"

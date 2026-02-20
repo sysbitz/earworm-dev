@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-
 import { motion, useReducedMotion, useInView } from "framer-motion";
+import GlassIconButton from "./ui/GlassIconButton";
 
 // ============================================
 // HolographicBlobs Component
@@ -15,7 +15,7 @@ const HolographicBlobs: React.FC = () => {
 	return (
 		<div
 			ref={containerRef}
-			className="relative w-full h-[572px] flex items-center justify-center">
+			className="relative w-full h-160 flex items-center justify-center">
 			<div
 				className="absolute inset-0 -z-10"
 				style={{
@@ -29,7 +29,7 @@ const HolographicBlobs: React.FC = () => {
 				}}
 			/>
 			<motion.div
-				className="relative w-[460px] h-[460px]"
+				className="relative w-115 h-115"
 				animate={isInView && !prefersReducedMotion ? floatingAnimation : {}}
 				transition={{
 					duration: 6,
@@ -61,7 +61,7 @@ const ProcessCard: React.FC<{
 	index: number; // Added missing prop
 }> = ({ icon, title, description, index }) => {
 	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-	const [isHovered, setIsHovered] = useState(false); // Added missing state
+	const [isHovered, setIsHovered] = useState(false);
 	const cardRef = useRef<HTMLDivElement>(null);
 
 	const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -73,14 +73,14 @@ const ProcessCard: React.FC<{
 	return (
 		<div
 			ref={cardRef}
-			className="sticky w-full group"
+			className="sticky w-full group geist"
 			style={{
 				top: `${120 + index * 120}px`,
 				zIndex: index + 1,
 			}}>
 			{/* Gradient Border Effect */}
 			<div
-				className="absolute -inset-[1px] rounded-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+				className="absolute -inset-px rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
 				style={{
 					background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.15), transparent 40%)`,
 				}}
@@ -91,7 +91,7 @@ const ProcessCard: React.FC<{
 				onMouseMove={handleMouseMove}
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}
-				className="relative bg-[#0D0D0D] rounded-[24px] p-8 md:p-10 pb-20 md:pb-24 flex flex-col border border-white/[0.08] overflow-hidden transition-all duration-500 group-hover:border-white/20 shadow-2xl">
+				className="relative bg-[#0D0D0D] rounded-3xl p-8 md:p-10 flex flex-col border border-white/8 overflow-hidden transition-all duration-500 group-hover:border-white/20">
 				{/* Top Glow Effect */}
 				<div
 					className="absolute inset-0 opacity-100 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
@@ -123,46 +123,14 @@ const ProcessCard: React.FC<{
 
 				{/* Header */}
 				<div className="relative z-10 flex items-center gap-5 mb-6">
-					{/* Icon wrapper with gradient border */}
-					<div
-						className="relative w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-500 group-hover:scale-105"
-						style={{
-							padding: "1.5px",
-							background:
-								"linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.2) 35%, rgba(0,0,0,0.9) 65%, rgba(255,255,255,0.6) 100%)",
-						}}>
-						{/* Inner glass circle */}
-						<div
-							className="relative w-full h-full rounded-full flex items-center justify-center overflow-hidden"
-							style={{
-								background:
-									"linear-gradient(160deg, rgba(50,50,55,0.95) 0%, rgba(20,20,22,0.98) 100%)",
-								backdropFilter: "blur(20px) saturate(150%)",
-								WebkitBackdropFilter: "blur(20px) saturate(150%)",
-								boxShadow:
-									"0 4px 24px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(0,0,0,0.4)",
-							}}>
-							{/* Inner top-left shimmer */}
-							<div
-								className="absolute inset-0 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-								style={{
-									background:
-										"radial-gradient(ellipse 80% 60% at 30% 20%, rgba(255,255,255,0.22), transparent 70%)",
-								}}
-							/>
-							{/* Icon */}
-							<span className="relative z-10 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-								{icon}
-							</span>
-						</div>
-					</div>
-					<h3 className="text-[24px] font-medium text-white tracking-wide font-sans geist">
+					<GlassIconButton closeIcon={icon} h={64} w={64} iconSize={32} />
+					<h3 className="text-[32px] font-semibold text-[#EDEDED] tracking-wide geist">
 						{title}
 					</h3>
 				</div>
 
 				{/* Description */}
-				<p className="relative z-10 text-gray-500 text-[16px] leading-relaxed group-hover:text-gray-400 transition-colors geist">
+				<p className="relative z-10 text-[#E0E0E0] text-[16px] transition-colors geist">
 					{description}
 				</p>
 			</div>
@@ -272,7 +240,7 @@ const ProcessSection: React.FC = () => {
 			),
 			title: "Produce",
 			description:
-				"Every episode is carefully planned and managed end-to-end. We handle scheduling, research, guest sourcing, recording, and production.",
+				"Every episode is carefully planned and managed end-to-end. We handle scheduling, research, guest sourcing, recording, and production - so your podcast runs smoothly on autopilot.",
 		},
 		{
 			icon: (
@@ -306,7 +274,7 @@ const ProcessSection: React.FC = () => {
 			),
 			title: "Publish",
 			description:
-				"One episode becomes content everywhere. Each recording is distributed as video, audio, clips, teasers, reels, and newsletters across all channels.",
+				"One episode becomes content everywhere. Each recording is distributed as video, audio, clips, teasers, reels, blog content, and newsletters - designed to show up consistently across every channel that matters.",
 		},
 		{
 			icon: (
@@ -348,25 +316,25 @@ const ProcessSection: React.FC = () => {
 			),
 			title: "Report",
 			description:
-				"Decision-grade reporting that goes beyond downloads. See who's listening, audience trends, and engagement signals needed to support growth.",
+				"Decision-grade reporting that goes beyond downloads. See who’s listening, how content is performing, audience trends, and engagement signals - giving your team the insight needed to refine strategy and support growth.",
 		},
 	];
 
 	return (
 		<div
-			className="bg-black py-[60px] relative z-20"
+			className="bg-[#0D0D0D] py-15 relative z-20 px-20"
 			style={{
 				borderBottomLeftRadius: "80px",
 				borderBottomRightRadius: "80px",
 			}}>
-			<div className="max-w-[1280px] mx-auto px-6 lg:px-0 relative z-10">
+			<div className=" px-6 lg:px-0 relative z-10">
 				<div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
 					{/* Left Column: Sticky Title + Image */}
-					<div className="lg:sticky lg:top-32 self-start">
-						<h2 className="nohemi text-[32px] lg:text-[56px] font-display font-medium text-white mb-5 tracking-tight leading-[1.2]">
+					<div className="lg:w-1/2 lg:sticky lg:top-30 self-start">
+						<h2 className="text-[32px] lg:text-[56px] nohemi font-medium text-white mb-5 tracking-tight leading-[1.2]">
 							Our process
 						</h2>
-						<p className="geist text-gray-400 text-[20px] leading-[1.5] mb-16 max-w-2xl text-justify">
+						<p className="text-gray-400 text-[20px] mb-16 max-w-2xl text-justify geist">
 							Our process is designed to take the complexity out of podcasting.
 							We handle everything from idea to insight, so your show runs
 							consistently and delivers real value for the business.
@@ -377,7 +345,9 @@ const ProcessSection: React.FC = () => {
 					</div>
 
 					{/* Right Column (The Card Stack) */}
-					<div className="lg:w-2/3 flex flex-col gap-5 mb-16">
+					<div
+						className="lg:w-1/2 flex flex-col gap-5 geist"
+						style={{ paddingBottom: "calc(100vh - 80px - 240px)" }}>
 						{processData.map((item, idx) => (
 							<ProcessCard
 								key={idx}
