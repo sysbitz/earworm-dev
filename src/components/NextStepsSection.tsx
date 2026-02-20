@@ -351,7 +351,7 @@ const CalendarWidget = () => {
 
 const NextStepsSection: React.FC = () => {
 	return (
-		<div className="bg-[#050505] py-24 relative overflow-hidden">
+		<div className="bg-[#0D0D0D] py-24 relative overflow-hidden">
 			<div className="max-w-[1200px] mx-auto px-6 relative z-10">
 				{/* Header */}
 				<div className="text-center mb-20">
