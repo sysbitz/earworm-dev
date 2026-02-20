@@ -189,7 +189,7 @@ const CalendarWidget = () => {
 	};
 
 	return (
-		<div className="bg-white rounded-[32px] overflow-hidden flex flex-col w-full max-w-[1000px] mx-auto shadow-2xl text-black">
+		<div className="bg-white rounded-4xl overflow-hidden flex flex-col w-full mx-auto shadow-2xl text-black h-[750px]">
 			<div className="flex flex-col lg:flex-row">
 				{/* Sidebar */}
 				<div className="p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-gray-100 lg:w-[35%] bg-gray-50/50">
@@ -307,7 +307,7 @@ const CalendarWidget = () => {
 					</div>
 
 					{selectedDate ? (
-						<div className="space-y-3 overflow-y-auto max-h-[300px] custom-scrollbar pr-2">
+						<div className="space-y-3 overflow-y-auto max-h-75 custom-scrollbar pr-2">
 							{timeSlots.map((time) => (
 								<button
 									key={time}
@@ -351,22 +351,22 @@ const CalendarWidget = () => {
 
 const NextStepsSection: React.FC = () => {
 	return (
-		<div className="bg-[#0D0D0D] py-24 relative overflow-hidden">
-			<div className="max-w-[1200px] mx-auto px-6 relative z-10">
+		<div className="bg-[#0D0D0D] py-24 relative overflow-hidden px-20">
+			<div className=" px-20 relative z-10">
 				{/* Header */}
 				<div className="text-center mb-20">
 					<h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white mb-4 tracking-tight leading-[1.2] nohemi">
 						What happens next?
 					</h2>
-					<p className="text-gray-400 text-[20px] leading-[1.5] geist mb-0">
+					<p className="text-gray-400 text-[20px] leading-normal geist mb-0">
 						Our team reviews every inquiry personally.
 					</p>
 				</div>
 
 				{/* Steps Grid */}
 				<div
-					className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-0"
-					style={{ marginTop: "40px" }}>
+					className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-0 mt-10"
+					>
 					<StepCard
 						icon={
 							<img
@@ -405,7 +405,7 @@ const NextStepsSection: React.FC = () => {
 				{/* Earth Background Section */}
 				<div className="relative">
 					{/* Earth Illustration */}
-					<div className="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/4 w-[1200px] h-[1200px] pointer-events-none z-0">
+					<div className="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/4 w-300 h-300 pointer-events-none z-0">
 						<img
 							src="/earth.png"
 							alt=""
@@ -443,7 +443,7 @@ const NextStepsSection: React.FC = () => {
 							Book a free 1:1 consultation <br />
 							with our workflow experts
 						</h2>
-						<p className="text-gray-400 text-[20px] leading-[1.5] flex items-center justify-center gap-2 geist">
+						<p className="text-gray-400 text-[20px] leading-normal flex items-center justify-center gap-2 geist">
 							<span className="w-2 h-2 rounded-full bg-gray-500"></span>
 							Have a project in mind? Schedule a time with us.
 							<span className="w-2 h-2 rounded-full bg-gray-500"></span>
@@ -451,7 +451,7 @@ const NextStepsSection: React.FC = () => {
 					</div>
 
 					{/* Calendar Embed */}
-					<div className="relative z-10 max-w-[1280px] mx-auto flex flex-col items-start gap-[10px] py-[60px] pl-[18px] pr-[12px] mt-0">
+					<div className="relative z-10  flex flex-col items-start gap-2.5 py-15 pl-4.5 pr-3 mt-0">
 						<CalendarWidget />
 					</div>
 				</div>
