@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Play, MessageCircle, Share2, Clapperboard } from "lucide-react";
+import { Play } from "lucide-react";
 
 // Simple Video Player Component - Play button only
 const CustomVideoPlayer: React.FC = () => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 
 const glassStyle: React.CSSProperties = {
@@ -12,8 +12,8 @@ const glassStyle: React.CSSProperties = {
 };
 
 const ServicesSection: React.FC = () => {
-	const [launchHovered, setLaunchHovered] = useState(false);
-	const [runHovered, setRunHovered] = useState(false);
+	// const [launchHovered, setLaunchHovered] = useState(false);
+	// const [runHovered, setRunHovered] = useState(false);
 
 	return (
 		<div className="bg-[#E4E5E9] border border-t py-[60px] relative z-0">

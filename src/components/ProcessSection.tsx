@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-import { Rocket, Share2, FileText, ListVideo } from "lucide-react";
-import { motion, useReducedMotion, useInView, useScroll } from "framer-motion";
+
+import { motion, useReducedMotion, useInView } from "framer-motion";
 
 // ============================================
 // HolographicBlobs Component

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mic2, Layers, Zap, Globe, Cpu, Radio } from 'lucide-react';
-import { Feature } from '../types';
+import type { Feature } from '../types';
 
 const features: Feature[] = [
   {
