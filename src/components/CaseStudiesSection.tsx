@@ -213,7 +213,8 @@ const CaseStudyCard: React.FC<{ study: CaseStudy }> = ({ study }) => {
 			ref={cardRef}
 			className="group relative aspect-21/24 rounded-3xl overflow-hidden cursor-pointer"
 			onMouseEnter={handleMouseEnter}
-			onMouseLeave={handleMouseLeave}>
+			onMouseLeave={handleMouseLeave}
+		>
 			{/* Glass Border Frame */}
 			<div className="absolute inset-0 rounded-3xl border border-[#707070]/30 z-20 pointer-events-none"></div>
 			<div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10 z-20 pointer-events-none"></div>
@@ -234,9 +235,6 @@ const CaseStudyCard: React.FC<{ study: CaseStudy }> = ({ study }) => {
 				muted
 			/>
 
-			{/* Gradient Overlay - subtle, bottom focused */}
-			<div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-transparent pointer-events-none"></div>
-
 			{/* Top Elements */}
 			<div className="absolute top-5 left-5 z-10">{study.clientLogo}</div>
 			<div className="absolute top-5 right-5 z-10">
@@ -247,17 +245,23 @@ const CaseStudyCard: React.FC<{ study: CaseStudy }> = ({ study }) => {
 				/>
 			</div>
 
-			{/* Bottom Content - Glass Panel with Fade */}
-			<div className="absolute bottom-0 left-0 right-0 z-10">
-				{/* Gradient fade blur layer */}
-				<div
-					className="absolute inset-0 bg-linear-to-t from-black/60 via-black/40 to-transparent backdrop-blur-lg"
-					style={{
-						maskImage: "linear-gradient(to top, black 60%, transparent 100%)",
-						WebkitMaskImage:
-							"linear-gradient(to top, black 60%, transparent 100%)",
-					}}></div>
+			{/* Progressive blur glassmorphism overlay (Bottom) with minimal blur */}
+			<div
+				className="absolute left-0 bottom-0 w-full z-20 pointer-events-none"
+				style={{
+					height: '44%',
+					background: 'linear-gradient(to top, rgba(0,0,0,0.14) 68%, transparent 100%)',
+					backdropFilter: 'blur(6px)',
+					WebkitBackdropFilter: 'blur(6px)',
+					borderBottomLeftRadius: '1.5rem',
+					borderBottomRightRadius: '1.5rem',
+					maskImage: 'linear-gradient(to top, black 90%, transparent 100%)',
+					WebkitMaskImage: 'linear-gradient(to top, black 90%, transparent 100%)',
+				}}
+			/>
 
+			{/* Bottom Content - Glass Panel with Fade */}
+			<div className="absolute bottom-0 left-0 right-0 z-30">
 				<div className="relative p-5">
 					<h3 className="text-[32px] font-display font-semibold text-white mb-3 tracking-wide">
 						{study.title}

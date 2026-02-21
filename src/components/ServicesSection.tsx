@@ -27,36 +27,31 @@ const ServicesSection: React.FC = () => {
 				</div>
 
 				{/* Card 1: Launch */}
-				<div
-					className="relative p-8 geist"
-					style={{ ...glassStyle, marginBottom: "64px" }}>
-					<div className="rounded-3xl bg-white overflow-hidden flex flex-col md:flex-row p-8 gap-8">
-						<div
-							className="md:w-1/2 overflow-hidden rounded-2xl"
-							style={{ maxHeight: "400px" }}>
+				<div className="relative p-8 geist mb-16" style={{ ...glassStyle }}>
+					<div className="rounded-3xl bg-white overflow-hidden flex flex-col md:flex-row border-2 border-white gap-10 h-118">
+						<div className="self-stretch overflow-hidden rounded-l-2xl">
 							<img
 								src="./services_launch.png"
 								alt="Launch Service"
-								className="w-full h-full object-cover object-center"
-								style={{ maxHeight: "400px" }}
+								className="w-full h-full object-cover"
 							/>
 						</div>
-						<div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
-							<h3 className="text-[40px] font-display font-bold text-[#0A0A0A] mb-4 leading-tight geist">
+						<div className="md:max-w-175 py-6 md:py-8 flex flex-col justify-center">
+							<h3 className="text-[40px] font-semibold text-[#0A0A0A] mb-4 leading-tight geist">
 								Launch
 							</h3>
-							<h4 className="text-[24px] font-medium text-[#373737] mb-6 geist">
+							<h4 className="text-[24px] font-semibold text-[#373737] mb-19.5 geist">
 								Incubating and launching video podcasts built to lead
 								conversations.
 							</h4>
-							<p className="text-gray-500 text-[20px] leading-relaxed mb-10 geist">
+							<p className="text-[#373737] text-[20px] leading-relaxed mb-6 geist">
 								We shape the idea, define the format, and build the foundations
 								for launch, covering strategy, creative direction, host
 								sourcing, and production setup so your podcast starts with
 								clarity, confidence, and intent.
 							</p>
 							<div>
-								<button className="relative px-6 py-2.5 rounded-full font-bold text-[15px] text-[#0A0A0A] flex items-center gap-3 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_24px_rgba(28,249,117,0.35)] transition-shadow duration-300 overflow-hidden bg-white group">
+								<button className="relative pl-5 pr-1 py-3.5 rounded-full font-semibold text-[20px] text-[#0D0D0D] flex items-center gap-8 duration-300 overflow-hidden bg-[#EDEDED] group">
 									<span
 										className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out origin-left scale-x-0 group-hover:scale-x-100"
 										style={{
@@ -65,8 +60,8 @@ const ServicesSection: React.FC = () => {
 										}}
 									/>
 									<span className="relative z-10 geist">Read More</span>
-									<span className="relative z-10 w-7 h-7 rounded-full bg-black flex items-center justify-center p-1 transition-transform duration-300 group-hover:translate-x-1">
-										<ArrowRight className="w-4 h-4 text-white" />
+									<span className="relative z-10 w-12 h-12 rounded-full bg-black flex items-center justify-center p-2  duration-300 ">
+										<ArrowRight className="w-7 h-7 text-white" />
 									</span>
 								</button>
 							</div>
@@ -75,34 +70,31 @@ const ServicesSection: React.FC = () => {
 				</div>
 
 				{/* Card 2: Run & Scale */}
-				<div className="relative p-8 geist" style={glassStyle}>
-					<div className="rounded-3xl bg-white overflow-hidden flex flex-col md:flex-row p-8 gap-8">
-						<div
-							className="md:w-1/2 overflow-hidden rounded-2xl"
-							style={{ maxHeight: "400px" }}>
+				<div className="relative p-8 geist" style={{ ...glassStyle }}>
+					<div className="rounded-3xl bg-white overflow-hidden flex flex-col md:flex-row border-2 border-white gap-10">
+						<div className="self-stretch overflow-hidden rounded-l-2xl">
 							<img
 								src="/Frame .png"
-								alt="Run & Scale Service"
-								className="w-full h-full object-cover object-center"
-								style={{ maxHeight: "400px" }}
+								alt="Launch Service"
+								className="w-full h-full object-cover"
 							/>
 						</div>
-						<div className="md:w-1/2 p-8 flex flex-col justify-center">
-							<h3 className="text-[40px] font-display font-bold text-[#0A0A0A] mb-4 leading-normal geist">
+						<div className="md:max-w-175 py-6 md:py-8 pr-14 flex flex-col justify-center">
+							<h3 className="text-[40px] font-semibold text-[#0A0A0A] mb-4 leading-tight geist">
 								Run & Scale
 							</h3>
-							<h4 className="text-[24px] font-medium text-[#373737] mb-6 geist">
+							<h4 className="text-[24px] font-semibold text-[#373737] mb-19.5 geist">
 								End-to-end management of podcasts as long-term business
 								channels.
 							</h4>
-							<p className="text-gray-500 text-[20px] leading-normal mb-10 geist">
+							<p className="text-[#373737] text-[20px] leading-relaxed mb-6 geist">
 								Once a podcast is live, we manage the entire system around it —
 								planning, production, distribution, and reporting — turning each
 								episode into consistent, high-quality content that supports
 								marketing, sales, and the wider organization.
 							</p>
 							<div>
-								<button className="relative px-6 py-2.5 rounded-full font-bold text-[15px] text-[#0A0A0A] flex items-center gap-3 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_24px_rgba(28,249,117,0.35)] transition-shadow duration-300 overflow-hidden bg-white group">
+								<button className="relative pl-5 pr-1 py-3.5 rounded-full font-semibold text-[20px] text-[#0D0D0D] flex items-center gap-8 duration-300 overflow-hidden bg-[#EDEDED] group">
 									<span
 										className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out origin-left scale-x-0 group-hover:scale-x-100"
 										style={{
@@ -111,8 +103,8 @@ const ServicesSection: React.FC = () => {
 										}}
 									/>
 									<span className="relative z-10 geist">Read More</span>
-									<span className="relative z-10 w-7 h-7 rounded-full bg-black flex items-center justify-center p-1 transition-transform duration-300 group-hover:translate-x-1">
-										<ArrowRight className="w-4 h-4 text-white" />
+									<span className="relative z-10 w-12 h-12 rounded-full bg-black flex items-center justify-center p-2  duration-300 ">
+										<ArrowRight className="w-7 h-7 text-white" />
 									</span>
 								</button>
 							</div>

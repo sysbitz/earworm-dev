@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import GlassIconButton from "./ui/GlassIconButton";
 
 interface BlogPost {
 	id: string;
@@ -50,22 +51,16 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
 			onMouseMove={handleMouseMove}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
-			className="group cursor-pointer flex flex-col h-full rounded-[32px] p-4 transition-all duration-300 relative"
+			className="group cursor-pointer flex flex-col rounded-[48px] p-8 gap-2.5  flex-1 self-stretch transition-all duration-300 relative border"
 			style={{
 				background: "rgba(255, 255, 255, 0.10)",
 				backdropFilter: "blur(10px)",
 				WebkitBackdropFilter: "blur(10px)",
-				border: isHovered
-					? "1px solid rgba(255,255,255,0.20)"
-					: "1px solid rgba(255,255,255,0.10)",
-				boxShadow: isHovered
-					? "0 16px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.18)"
-					: "0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.10)",
-				isolation: "isolate",
+				border: "1px solid rgba(255,255,255,0.20)",
 			}}>
 			{/* Top specular highlight */}
 			<div
-				className="absolute top-0 left-0 right-0 h-px pointer-events-none rounded-t-[32px]"
+				className="absolute top-0 left-0 right-0 h-px pointer-events-none rounded-t-4xl"
 				style={{
 					background:
 						"linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 25%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.4) 75%, transparent 100%)",
@@ -76,7 +71,7 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
 
 			{/* Mouse-reactive shimmer */}
 			<div
-				className="absolute inset-0 pointer-events-none rounded-[32px] transition-opacity duration-500"
+				className="absolute inset-0 pointer-events-none rounded-4xl transition-opacity duration-500"
 				style={{
 					opacity: isHovered ? 1 : 0,
 					background: `radial-gradient(ellipse 60% 50% at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.07), transparent 60%)`,
@@ -84,7 +79,7 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
 			/>
 
 			{/* Image Container */}
-			<div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6 bg-[#000]">
+			<div className="relative aspect-16/10 rounded-2xl overflow-hidden mb-6 bg-black">
 				<img
 					src={post.image}
 					alt={post.title}
@@ -93,7 +88,7 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
 			</div>
 
 			{/* Content */}
-			<div className="flex flex-col items-start flex-grow px-2 pb-2 relative z-10">
+			<div className="flex flex-col items-start grow px-2 pb-2 relative z-10">
 				<div className="text-gray-500 text-[12px] font-medium mb-3 flex items-center gap-2 uppercase tracking-wider geist">
 					<span>{post.date}</span>
 					<span className="w-px h-3 bg-gray-700"></span>
@@ -169,9 +164,19 @@ const ViewAllButton: React.FC = () => {
 				View All Articles
 			</span>
 
-			{/* Icon circle — clips overflow so arrow slides in from top */}
-			<div
-				className="w-10 h-10 rounded-full flex items-center justify-center relative z-10 flex-shrink-0 transition-all duration-300 overflow-hidden"
+			{/* Icon circle — z-10 keeps it above the gradient sweep layer */}
+			<div className="relative z-10">
+				<GlassIconButton
+					h={48}
+					w={48}
+					iconSize={26}
+					openIcon={
+						<ArrowUpRight className="duration-300 group-hover:rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+					}
+				/>
+			</div>
+			{/* <div
+				className="w-10 h-10 rounded-full flex items-center justify-center relative z-10 shrink-0 transition-all duration-300 overflow-hidden"
 				style={{
 					background: isHovered ? "rgba(0,0,0,0.8)" : "rgba(255,255,255,0.08)",
 					border: "1px solid rgba(255,255,255,0.15)",
@@ -186,7 +191,7 @@ const ViewAllButton: React.FC = () => {
 						transition: "transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
 					}}
 				/>
-			</div>
+			</div> */}
 		</button>
 	);
 };
@@ -194,24 +199,27 @@ const ViewAllButton: React.FC = () => {
 const BlogSection: React.FC = () => {
 	return (
 		<div className="bg-[#0D0D0D] py-24 px-20 relative z-10">
-			<div className=" px-6 lg:px-12">
+			<div className="px-0 lg:px-0">
 				{/* Header */}
-				<div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-8 text-center md:text-left">
-					<div className="max-w-xl">
+				<div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between mb-12 text-center md:text-left">
+					<div className="flex flex-col max-w-xl">
 						<h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white mb-6 tracking-tight leading-[1.2] nohemi">
 							From the blog
 						</h2>
-						<p className="text-gray-400 text-[16px] md:text-[20px] leading-normal max-w-sm mx-auto md:mx-0 geist">
+						<p
+							className="text-[16px] md:text-[20px] leading-normal max-w-sm mx-auto md:mx-0 geist font-normal"
+							style={{ color: "#E0E0E0" }}>
 							Latest thinking on podcast strategy, guest booking, and B2B
 							content.
 						</p>
 					</div>
-
-					<ViewAllButton />
+					<div className="flex md:items-start md:mt-2">
+						<ViewAllButton />
+					</div>
 				</div>
 
 				{/* Grid */}
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 					{blogPosts.map((post) => (
 						<BlogCard key={post.id} post={post} />
 					))}

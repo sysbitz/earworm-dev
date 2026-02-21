@@ -87,6 +87,8 @@ const TestimonialsSection: React.FC = () => {
 						border: "1px solid rgba(255,255,255,0.15)",
 						boxShadow:
 							"0 8px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(0,0,0,0.2)",
+						minHeight: '370px',
+						transition: 'min-height 0.3s',
 					}}>
 					{/* Top specular highlight */}
 					<div

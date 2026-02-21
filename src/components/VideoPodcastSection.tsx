@@ -23,7 +23,7 @@ const CustomVideoPlayer: React.FC = () => {
 	};
 
 	return (
-    <div className="relative w-full h-150 aspect-video md:aspect-[2.35/1] rounded-[48px] overflow-hidden border border-white/30 bg-[#0D0D0D] group">
+    <div className="relative w-full h-150 aspect-video md:aspect-[2.35/1] rounded-[48px] overflow-hidden border border-white/20 bg-[#0D0D0D] group">
       {/* Video Element */}
       <video
         ref={videoRef}
@@ -89,7 +89,7 @@ const FeatureCard: React.FC<{
         style={{
           background:
             "linear-gradient(160deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 40%, rgba(0,0,0,0.35) 100%)",
-          border: "1px solid rgba(255,255,255,0.12)",
+          border: "1px solid rgba(255,255,255,0.2)",
           boxShadow:
             "inset 0 1px 0 rgba(255,255,255,0.13), inset 0 -1px 0 rgba(0,0,0,0.2), 0 20px 40px rgba(0,0,0,0.6)",
           backdropFilter: "blur(20px)",

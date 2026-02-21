@@ -28,11 +28,13 @@ const ContactSection: React.FC = () => {
 		});
 	};
 
+
+
 	const inputClass =
-		"contact-input w-full bg-[#1a1a1a] border border-white/8 rounded-full px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-white/20 transition-colors text-[15px] geist";
+		"contact-input w-full bg-[#191919] border border-white/8 rounded-full px-4 py-3.5 text-white focus:outline-none focus:border-white/20 transition-colors text-[15px] geist";
 
 	const textareaClass =
-		"contact-input w-full bg-[#1a1a1a] border border-white/8 rounded-2xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-white/20 resize-none transition-colors text-[15px] geist";
+		"contact-input w-full bg-[#191919] border border-white/8 rounded-2xl px-4 py-3.5 text-white focus:outline-none focus:border-white/20 resize-none transition-colors text-[15px] geist";
 
 	const numberBadge = (n: number) => (
 		<div
@@ -56,8 +58,11 @@ const ContactSection: React.FC = () => {
 
 			<div className="relative z-10">
 				{/* Header */}
-				<div className="text-center mb-16">
-					<h2 className="text-[56px] lg:text-[56px] font-medium text-white mb-6 tracking-tight leading-[1.2] nohemi">
+				<div className="text-center" style={{ marginTop: '60px', marginBottom: '64px' }}>
+					<h2
+						className="text-[56px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.2] nohemi"
+						style={{ marginBottom: '20px' }}
+					>
 						Let's get in Touch
 					</h2>
 					<p className="text-gray-400 text-[20px] geist">
@@ -85,14 +90,11 @@ const ContactSection: React.FC = () => {
 
 						{/* Card */}
 						<div
-							className="relative rounded-[28px] p-8 md:p-10 overflow-hidden z-10"
+							className="relative p-8 md:p-10 overflow-hidden z-10"
 							style={{
-								background: "rgba(12,12,12,0.85)",
-								backdropFilter: "blur(24px)",
-								WebkitBackdropFilter: "blur(24px)",
-								border: "1px solid rgba(255,255,255,0.07)",
-								boxShadow:
-									"0 24px 80px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08)",
+								borderRadius: "48px",
+								border: "1px solid #FFF",
+								background: "linear-gradient(180deg, #0D0D0D 0%, #0D0D0D 100%)"
 							}}>
 							{/* Top specular highlight */}
 							<div
@@ -126,7 +128,7 @@ const ContactSection: React.FC = () => {
 							<div className="mb-10 relative">
 								<div className="flex items-center gap-3 mb-6">
 									{numberBadge(1)}
-									<h3 className="text-[20px] font-medium text-white geist">
+									<h3 className="text-[24px] font-medium text-white geist">
 										What Is Your Primary Objective?
 									</h3>
 								</div>
@@ -164,10 +166,10 @@ const ContactSection: React.FC = () => {
 												}>
 												{icon}
 											</div>
-											<h4 className="text-white font-semibold text-[14px] mb-1.5 geist">
+											<h4 className="text-white font-semibold text-[20px] mb-1.5 geist">
 												{id}
 											</h4>
-											<p className="text-gray-500 text-[13px] geist leading-snug">
+											<p className="text-gray-500 text-[16px] geist leading-snug">
 												{desc}
 											</p>
 										</button>
@@ -184,42 +186,55 @@ const ContactSection: React.FC = () => {
 									</h3>
 								</div>
 
-								<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-									{[
-										{
-											label: "Episode Frequency",
-											options: ["Weekly", "Bi-Weekly", "Monthly"],
-										},
-										{
-											label: "Format",
-											options: ["Video & Audio", "Audio Only", "Video Only"],
-										},
-										{
-											label: "Expected Launch Time",
-											options: ["1 Month", "3 Months", "6 Months+"],
-										},
-										{
-											label: "Annual Budget",
-											options: ["£10k-£20k", "£20k-£50k", "£50k+"],
-										},
-									].map((field) => (
-										<div key={field.label}>
-											<label className="block text-[13px] text-gray-500 mb-2 pl-1 font-medium geist">
-												{field.label}
-											</label>
-											<div className="relative">
-												<select
-													title={field.label}
-													aria-label={field.label}
-													className="w-full bg-[#1a1a1a] border border-white/8 rounded-full px-4 py-3.5 text-white appearance-none focus:outline-none focus:border-white/20 transition-colors cursor-pointer text-[15px] geist pr-10">
-													{field.options.map((opt) => (
-														<option key={opt}>{opt}</option>
-													))}
-												</select>
-												<ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
+								<div
+									style={{
+										display: 'flex',
+										padding: '20px',
+										flexDirection: 'column',
+										alignItems: 'flex-start',
+										gap: '24px',
+										alignSelf: 'stretch',
+										borderRadius: '24px',
+										background: 'rgba(255, 255, 255, 0.05)'
+									}}
+								>
+									<div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
+										{[
+											{
+												label: "Episode Frequency",
+												options: ["Weekly", "Bi-Weekly", "Monthly"],
+											},
+											{
+												label: "Format",
+												options: ["Video & Audio", "Audio Only", "Video Only"],
+											},
+											{
+												label: "Expected Launch Time",
+												options: ["1 Month", "3 Months", "6 Months+"],
+											},
+											{
+												label: "Annual Budget",
+												options: ["£10k-£20k", "£20k-£50k", "£50k+"],
+											},
+										].map((field) => (
+											<div key={field.label}>
+												<label className="block text-[13px] text-gray-500 mb-2 pl-1 font-medium geist">
+													{field.label}
+												</label>
+												<div className="relative">
+													<select
+														title={field.label}
+														aria-label={field.label}
+														className="w-full bg-[#191919] border border-white/8 rounded-full px-4 py-3.5 text-white appearance-none focus:outline-none focus:border-white/20 transition-colors cursor-pointer text-[15px] geist pr-10">
+														{field.options.map((opt) => (
+															<option key={opt}>{opt}</option>
+														))}
+													</select>
+													<ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
+												</div>
 											</div>
-										</div>
-									))}
+										))}
+									</div>
 								</div>
 							</div>
 
