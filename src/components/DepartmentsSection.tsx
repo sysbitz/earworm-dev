@@ -93,7 +93,7 @@ const DepartmentsSection: React.FC = () => {
 	// Wrapper height:
 	// The sticky element is h-screen, so we need exactly that for the "dwell" time,
 	// plus one STEP_HEIGHT per additional tab beyond the first.
-	const totalHeight = `calc(100vh + ${STEP_HEIGHT * (departments.length - 1)}px)`;
+	const totalHeight = `calc(100vh + ${STEP_HEIGHT * departments.length}px)`;
 
 	return (
 		<div
@@ -101,7 +101,7 @@ const DepartmentsSection: React.FC = () => {
 			className="bg-[#E6E8EB] relative z-10 px-20 py-24"
 			style={{ height: totalHeight }}>
 			{/* Sticky shell — pins when the section TOP (title) reaches top:0 */}
-			<div className="sticky top-24 flex flex-col justify-center py-8 overflow-visible">
+			<div className="sticky top-0 flex flex-col justify-center py-2 overflow-visible">
 				<div className="px-2 lg:px-2 w-full">
 					{/* Header */}
 					<div className="mb-16 text-center">
@@ -180,7 +180,7 @@ const DepartmentsSection: React.FC = () => {
 													</div>
 												</div>
 												{!isActive && (
-													<div className="ml-[60px] mt-4 h-px bg-gray-100"></div>
+													<div className="ml-15 mt-4 h-px bg-gray-100"></div>
 												)}
 											</div>
 										);
@@ -190,7 +190,7 @@ const DepartmentsSection: React.FC = () => {
 
 							{/* Right Side: Crossfade Images */}
 							<div
-								className="lg:w-[55%] relative h-full min-h-[400px] bg-gray-100 overflow-hidden"
+								className="lg:w-[55%] relative h-full min-h-100 bg-gray-100 overflow-hidden"
 								style={{ borderRadius: "0 24px 24px 0" }}>
 								{departments.map((dept, index) => (
 									<img

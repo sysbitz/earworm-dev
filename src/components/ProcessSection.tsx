@@ -323,47 +323,48 @@ const ProcessSection: React.FC = () => {
 	return (
 		<div className="bg-[#E4E5E9]">
 			<div
-			className="bg-[#0D0D0D] py-36 relative z-20 px-20"
-			style={{
-				borderBottomLeftRadius: "80px",
-				borderBottomRightRadius: "80px",
-			}}>
-			<div className=" px-6 py-8 lg:px-0 relative z-10">
-				<div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-					{/* Left Column: Sticky Title + Image */}
-					<div className="lg:w-1/2 lg:sticky lg:top-30 self-start">
-						<h2 className="text-[32px] lg:text-[56px] nohemi font-medium text-white mb-5 tracking-tight leading-[1.2]">
-							Our process
-						</h2>
-						<p className="text-gray-400 text-[20px] mb-16 max-w-2xl text-justify geist">
-							Our process is designed to take the complexity out of podcasting.
-							We handle everything from idea to insight, so your show runs
-							consistently and delivers real value for the business.
-						</p>
+				className="bg-[#0D0D0D] py-36 relative z-20 px-20"
+				style={{
+					borderBottomLeftRadius: "80px",
+					borderBottomRightRadius: "80px",
+				}}>
+				<div className=" px-6 py-8 lg:px-0 relative z-10">
+					<div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+						{/* Left Column: Sticky Title + Image */}
+						<div className="lg:w-1/2 lg:sticky lg:top-30 self-start">
+							<h2 className="text-[32px] lg:text-[56px] nohemi font-medium text-white mb-5 tracking-tight leading-[1.2]">
+								Our process
+							</h2>
+							<p className="text-gray-400 text-[20px] mb-16 max-w-2xl text-justify geist">
+								Our process is designed to take the complexity out of
+								podcasting. We handle everything from idea to insight, so your
+								show runs consistently and delivers real value for the business.
+							</p>
 
-						{/* Holographic 3D Blobs */}
-						<HolographicBlobs />
-					</div>
+							{/* Holographic 3D Blobs */}
+							<HolographicBlobs />
+						</div>
 
-					{/* Right Column (The Card Stack) */}
-					<div
-						className="lg:w-1/2 flex flex-col gap-5 geist"
-						style={{ paddingBottom: "calc(100vh - 80px - 240px)" }}>
-						{processData.map((item, idx) => (
-							<ProcessCard
-								key={idx}
-								index={idx}
-								icon={item.icon}
-								title={item.title}
-								description={item.description}
-							/>
-						))}
+						{/* Right Column (The Card Stack) */}
+						<div
+							className="lg:w-1/2 flex flex-col gap-5 geist"
+							style={{
+								paddingBottom: "calc(100vh - 80px - 240px - 3 * 120px)",
+							}}>
+							{processData.map((item, idx) => (
+								<ProcessCard
+									key={idx}
+									index={idx}
+									icon={item.icon}
+									title={item.title}
+									description={item.description}
+								/>
+							))}
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		</div>
-		
 	);
 };
 
