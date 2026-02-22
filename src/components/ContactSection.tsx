@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { ArrowRight } from "lucide-react";
-// import CustomDropdown from "./ui/CustomDropdown";
+import CustomDropdown from "./ui/CustomDropdown";
 
 const autofillStyle = `
   .contact-input:-webkit-autofill,
@@ -28,8 +28,6 @@ const ContactSection: React.FC = () => {
 			y: e.clientY - rect.top,
 		});
 	};
-
-
 
 	const inputClass =
 		"contact-input w-full bg-[#191919] border border-white/8 rounded-full px-4 py-3.5 text-white focus:outline-none focus:border-white/20 transition-colors text-[15px] geist";
@@ -59,11 +57,12 @@ const ContactSection: React.FC = () => {
 
 			<div className="relative z-10">
 				{/* Header */}
-				<div className="text-center" style={{ marginTop: '60px', marginBottom: '64px' }}>
+				<div
+					className="text-center"
+					style={{ marginTop: "60px", marginBottom: "64px" }}>
 					<h2
 						className="text-[56px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.2] nohemi"
-						style={{ marginBottom: '20px' }}
-					>
+						style={{ marginBottom: "20px" }}>
 						Let's get in Touch
 					</h2>
 					<p className="text-gray-400 text-[20px] geist">
@@ -94,8 +93,8 @@ const ContactSection: React.FC = () => {
 							className="relative p-8 md:p-10 overflow-hidden z-10"
 							style={{
 								borderRadius: "48px",
-								border: "1px solid #FFF",
-								background: "linear-gradient(180deg, #0D0D0D 0%, #0D0D0D 100%)"
+								border: "1px solid #E4E5E9",
+								background: "linear-gradient(180deg, #0D0D0D 0%, #0D0D0D 100%)",
 							}}>
 							{/* Top specular highlight */}
 							<div
@@ -139,10 +138,33 @@ const ContactSection: React.FC = () => {
 										{
 											id: "Brand Authority",
 											icon: (
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-													<path d="M14.9263 4.41054L8.27352 7.60403C7.76151 7.8498 7.21443 7.91138 6.65675 7.78644C6.29177 7.70468 6.10926 7.6638 5.9623 7.64702C4.13743 7.43863 3 8.88293 3 10.5438V11.4552C3 13.1161 4.13743 14.5604 5.9623 14.352C6.10926 14.3352 6.29178 14.2943 6.65675 14.2126C7.21443 14.0876 7.76151 14.1492 8.27352 14.395L14.9263 17.5885C16.4534 18.3216 17.217 18.6881 18.0684 18.4024C18.9197 18.1167 19.2119 17.5036 19.7964 16.2775C21.4012 12.9107 21.4012 9.08836 19.7964 5.72147C19.2119 4.49537 18.9197 3.88232 18.0684 3.59661C17.217 3.31091 16.4534 3.67745 14.9263 4.41054Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-													<path d="M12.999 16.999V17.499C12.999 18.7831 12.999 19.4251 12.775 19.7876C12.4763 20.2709 11.9302 20.544 11.3643 20.4929C10.9399 20.4547 10.4263 20.0694 9.39902 19.299L8.19902 18.399C7.22155 17.6659 6.99902 17.2208 6.99902 15.999V14.499" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-													<path d="M7.5 14V8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="24"
+													height="24"
+													viewBox="0 0 24 24"
+													fill="none">
+													<path
+														d="M14.9263 4.41054L8.27352 7.60403C7.76151 7.8498 7.21443 7.91138 6.65675 7.78644C6.29177 7.70468 6.10926 7.6638 5.9623 7.64702C4.13743 7.43863 3 8.88293 3 10.5438V11.4552C3 13.1161 4.13743 14.5604 5.9623 14.352C6.10926 14.3352 6.29178 14.2943 6.65675 14.2126C7.21443 14.0876 7.76151 14.1492 8.27352 14.395L14.9263 17.5885C16.4534 18.3216 17.217 18.6881 18.0684 18.4024C18.9197 18.1167 19.2119 17.5036 19.7964 16.2775C21.4012 12.9107 21.4012 9.08836 19.7964 5.72147C19.2119 4.49537 18.9197 3.88232 18.0684 3.59661C17.217 3.31091 16.4534 3.67745 14.9263 4.41054Z"
+														stroke="white"
+														stroke-width="1.5"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
+													<path
+														d="M12.999 16.999V17.499C12.999 18.7831 12.999 19.4251 12.775 19.7876C12.4763 20.2709 11.9302 20.544 11.3643 20.4929C10.9399 20.4547 10.4263 20.0694 9.39902 19.299L8.19902 18.399C7.22155 17.6659 6.99902 17.2208 6.99902 15.999V14.499"
+														stroke="white"
+														stroke-width="1.5"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
+													<path
+														d="M7.5 14V8"
+														stroke="white"
+														stroke-width="1.5"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
 												</svg>
 											),
 											desc: "Establish thought leadership in your industry.",
@@ -150,10 +172,33 @@ const ContactSection: React.FC = () => {
 										{
 											id: "Video Content",
 											icon: (
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-													<path d="M14 21H16M14 21C13.1716 21 12.5 20.3284 12.5 19.5V17H12M14 21H10M12 17H11.5V19.5C11.5 20.3284 10.8284 21 10 21M12 17V21M10 21H8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-													<path d="M16 2.99951H8C5.17157 2.99951 3.75736 2.99951 2.87868 3.87819C2 4.75687 2 6.17108 2 8.99951V10.9995C2 13.8279 2 15.2421 2.87868 16.1208C3.75736 16.9995 5.17157 16.9995 8 16.9995H16C18.8284 16.9995 20.2426 16.9995 21.1213 16.1208C22 15.2421 22 13.8279 22 10.9995V8.99951C22 6.17108 22 4.75687 21.1213 3.87819C20.2426 2.99951 18.8284 2.99951 16 2.99951Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-													<path d="M14.575 9.23402L11.188 7.11714C11.0645 7.03995 10.9218 6.99902 10.7761 6.99902C10.3469 6.99902 9.99902 7.34695 9.99902 7.77614V12.2219C9.99902 12.6511 10.3469 12.999 10.7761 12.999C10.9218 12.999 11.0645 12.9581 11.188 12.8809L14.575 10.764C14.8388 10.5991 14.999 10.31 14.999 9.99902C14.999 9.68798 14.8388 9.39887 14.575 9.23402Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="24"
+													height="24"
+													viewBox="0 0 24 24"
+													fill="none">
+													<path
+														d="M14 21H16M14 21C13.1716 21 12.5 20.3284 12.5 19.5V17H12M14 21H10M12 17H11.5V19.5C11.5 20.3284 10.8284 21 10 21M12 17V21M10 21H8"
+														stroke="white"
+														stroke-width="1.5"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
+													<path
+														d="M16 2.99951H8C5.17157 2.99951 3.75736 2.99951 2.87868 3.87819C2 4.75687 2 6.17108 2 8.99951V10.9995C2 13.8279 2 15.2421 2.87868 16.1208C3.75736 16.9995 5.17157 16.9995 8 16.9995H16C18.8284 16.9995 20.2426 16.9995 21.1213 16.1208C22 15.2421 22 13.8279 22 10.9995V8.99951C22 6.17108 22 4.75687 21.1213 3.87819C20.2426 2.99951 18.8284 2.99951 16 2.99951Z"
+														stroke="white"
+														stroke-width="1.5"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
+													<path
+														d="M14.575 9.23402L11.188 7.11714C11.0645 7.03995 10.9218 6.99902 10.7761 6.99902C10.3469 6.99902 9.99902 7.34695 9.99902 7.77614V12.2219C9.99902 12.6511 10.3469 12.999 10.7761 12.999C10.9218 12.999 11.0645 12.9581 11.188 12.8809L14.575 10.764C14.8388 10.5991 14.999 10.31 14.999 9.99902C14.999 9.68798 14.8388 9.39887 14.575 9.23402Z"
+														stroke="white"
+														stroke-width="1.5"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
 												</svg>
 											),
 											desc: "Generate multi-channel content.",
@@ -161,10 +206,31 @@ const ContactSection: React.FC = () => {
 										{
 											id: "Lead Generation",
 											icon: (
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-													<path d="M14 17.9995C18.4183 17.9995 22 14.4178 22 9.99951C22 5.58123 18.4183 1.99951 14 1.99951C9.58172 1.99951 6 5.58123 6 9.99951C6 14.4178 9.58172 17.9995 14 17.9995Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-													<path d="M3.15657 11C2.42523 12.1176 2 13.4535 2 14.8888C2 18.8162 5.18378 22 9.11116 22C10.5465 22 11.8824 21.5748 13 20.8434" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-													<path d="M15.7712 8.20396C15.555 7.29183 14.4546 6.46876 13.1337 7.08451C11.8128 7.70026 11.603 9.68141 13.601 9.89187C14.5041 9.987 15.0928 9.78149 15.6319 10.3628C16.1709 10.9441 16.2711 12.5607 14.8931 12.9964C13.5151 13.4321 12.1506 12.7513 12.002 11.7847M13.9862 6.00293V6.87197M13.9862 13.1305V14.0029" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="24"
+													height="24"
+													viewBox="0 0 24 24"
+													fill="none">
+													<path
+														d="M14 17.9995C18.4183 17.9995 22 14.4178 22 9.99951C22 5.58123 18.4183 1.99951 14 1.99951C9.58172 1.99951 6 5.58123 6 9.99951C6 14.4178 9.58172 17.9995 14 17.9995Z"
+														stroke="white"
+														stroke-width="1.5"
+														stroke-linecap="round"
+													/>
+													<path
+														d="M3.15657 11C2.42523 12.1176 2 13.4535 2 14.8888C2 18.8162 5.18378 22 9.11116 22C10.5465 22 11.8824 21.5748 13 20.8434"
+														stroke="white"
+														stroke-width="1.5"
+														stroke-linecap="round"
+													/>
+													<path
+														d="M15.7712 8.20396C15.555 7.29183 14.4546 6.46876 13.1337 7.08451C11.8128 7.70026 11.603 9.68141 13.601 9.89187C14.5041 9.987 15.0928 9.78149 15.6319 10.3628C16.1709 10.9441 16.2711 12.5607 14.8931 12.9964C13.5151 13.4321 12.1506 12.7513 12.002 11.7847M13.9862 6.00293V6.87197M13.9862 13.1305V14.0029"
+														stroke="white"
+														stroke-width="1.5"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
 												</svg>
 											),
 											desc: "Drive conversions and high value leads.",
@@ -207,21 +273,26 @@ const ContactSection: React.FC = () => {
 
 								<div
 									style={{
-										display: 'flex',
-										padding: '20px',
-										flexDirection: 'column',
-										alignItems: 'flex-start',
-										gap: '24px',
-										alignSelf: 'stretch',
-										borderRadius: '24px',
-										background: 'rgba(255, 255, 255, 0.05)'
-									}}
-								>
+										display: "flex",
+										padding: "20px",
+										flexDirection: "column",
+										alignItems: "flex-start",
+										gap: "24px",
+										alignSelf: "stretch",
+										borderRadius: "24px",
+										background: "rgba(255, 255, 255, 0.05)",
+									}}>
 									<div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
 										{[
 											{
 												label: "Episode Frequency",
-												options: ["Weekly", "Bi-Weekly", "Monthly", "Limited Series", "Unsure"],
+												options: [
+													"Weekly",
+													"Bi-Weekly",
+													"Monthly",
+													"Limited Series",
+													"Unsure",
+												],
 											},
 											{
 												label: "Format",
@@ -229,7 +300,7 @@ const ContactSection: React.FC = () => {
 													"Audio & Video",
 													"Audio Only",
 													"Live Event",
-													"Unsure"
+													"Unsure",
 												],
 											},
 											{
@@ -239,7 +310,7 @@ const ContactSection: React.FC = () => {
 													"1 Month",
 													"3 Months",
 													"6+ Months",
-													"Unsure"
+													"Unsure",
 												],
 											},
 											{
@@ -249,7 +320,7 @@ const ContactSection: React.FC = () => {
 													"£20k–£40k|Running a podcast as a serious channel",
 													"£40k–£75k|Multi-episode, multi-channel programmes",
 													"£75k+|Enterprise or multi-show partnerships",
-													"Unsure"
+													"Unsure",
 												],
 											},
 										].map((field) => (
@@ -257,7 +328,7 @@ const ContactSection: React.FC = () => {
 												<label className="block text-[13px] text-gray-500 mb-2 pl-1 font-medium geist">
 													{field.label}
 												</label>
-												{/* <CustomDropdown options={field.options} /> */}
+												<CustomDropdown options={field.options} />
 											</div>
 										))}
 									</div>
