@@ -46,18 +46,18 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
 	};
 
 	return (
-		<div
-			ref={cardRef}
-			onMouseMove={handleMouseMove}
-			onMouseEnter={() => setIsHovered(true)}
-			onMouseLeave={() => setIsHovered(false)}
-			className="group cursor-pointer flex flex-col rounded-[48px] p-8 gap-2.5  flex-1 self-stretch transition-all duration-300 relative border"
-			style={{
-				background: "rgba(255, 255, 255, 0.10)",
-				backdropFilter: "blur(10px)",
-				WebkitBackdropFilter: "blur(10px)",
-				border: "1px solid rgba(255,255,255,0.20)",
-			}}>
+		   <div
+			   ref={cardRef}
+			   onMouseMove={handleMouseMove}
+			   onMouseEnter={() => setIsHovered(true)}
+			   onMouseLeave={() => setIsHovered(false)}
+			   className="group cursor-pointer flex flex-col rounded-[48px] p-8 gap-2.5 flex-1 self-stretch transition-all duration-300 relative border w-[413px] h-[523px]"
+			   style={{
+				   background: "rgba(255, 255, 255, 0.10)",
+				   backdropFilter: "blur(10px)",
+				   WebkitBackdropFilter: "blur(10px)",
+				   border: "1px solid rgba(255,255,255,0.20)",
+			   }}>
 			{/* Top specular highlight */}
 			<div
 				className="absolute top-0 left-0 right-0 h-px pointer-events-none rounded-t-4xl"

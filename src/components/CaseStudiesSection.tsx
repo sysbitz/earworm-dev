@@ -211,7 +211,8 @@ const CaseStudyCard: React.FC<{ study: CaseStudy }> = ({ study }) => {
 	return (
 		<div
 			ref={cardRef}
-			className="group relative aspect-21/24 rounded-3xl overflow-hidden cursor-pointer"
+			className="group relative rounded-3xl overflow-hidden cursor-pointer"
+			style={{ width: '413px', height: '580px' }}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 		>
@@ -245,14 +246,14 @@ const CaseStudyCard: React.FC<{ study: CaseStudy }> = ({ study }) => {
 				/>
 			</div>
 
-			{/* Progressive blur glassmorphism overlay (Bottom) with minimal blur */}
+			{/* Progressive blur glassmorphism overlay (Bottom) with very minimal blur */}
 			<div
 				className="absolute left-0 bottom-0 w-full z-20 pointer-events-none"
 				style={{
-					height: '44%',
-					background: 'linear-gradient(to top, rgba(0,0,0,0.14) 68%, transparent 100%)',
-					backdropFilter: 'blur(6px)',
-					WebkitBackdropFilter: 'blur(6px)',
+					height: '35%',
+					background: 'linear-gradient(to top, rgba(30,64,175,0.18) 0%, rgba(0,0,0,0.14) 68%, transparent 100%)',
+					backdropFilter: 'blur(2.5px)',
+					WebkitBackdropFilter: 'blur(2.5px)',
 					borderBottomLeftRadius: '1.5rem',
 					borderBottomRightRadius: '1.5rem',
 					maskImage: 'linear-gradient(to top, black 90%, transparent 100%)',
@@ -262,7 +263,7 @@ const CaseStudyCard: React.FC<{ study: CaseStudy }> = ({ study }) => {
 
 			{/* Bottom Content - Glass Panel with Fade */}
 			<div className="absolute bottom-0 left-0 right-0 z-30">
-				<div className="relative p-5">
+				<div className="relative p-5 group">
 					<h3 className="text-[32px] font-display font-semibold text-white mb-3 tracking-wide">
 						{study.title}
 					</h3>
@@ -273,8 +274,22 @@ const CaseStudyCard: React.FC<{ study: CaseStudy }> = ({ study }) => {
 							describing the service
 						</p>
 
-						<button className="p-4 rounded-full bg-white text-black flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-[#8266FF] group-hover:text-white">
-							<ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-all duration-500" />
+						<button
+							className="w-8 h-8 min-w-[32px] min-h-[32px] max-w-[32px] max-h-[32px] rounded-full flex items-center justify-center transition-all duration-500 ease-in-out bg-white group-hover:bg-[#8266FF] group-hover:scale-110 group-hover:shadow-lg"
+						>
+							<svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect width="32" height="32" rx="16" fill="white" fillOpacity="0" />
+								<g className="transition-transform duration-500 ease-in-out group-hover:rotate-45" style={{ transformOrigin: '50% 50%' }}>
+									<path
+										d="M13.5016 11.5415C13.5016 11.5415 19.2836 11.0893 20.0978 11.9035C20.912 12.7177 20.4597 18.4996 20.4597 18.4996M19.7516 12.2496L11.4183 20.5829"
+										stroke="black"
+										strokeWidth="2"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										className="transition-colors duration-500 ease-in-out group-hover:stroke-white"
+									/>
+								</g>
+							</svg>
 						</button>
 					</div>
 				</div>
@@ -318,13 +333,16 @@ const CaseStudiesSection: React.FC = () => {
 						}}>
 						<button
 							className="
-              flex items-center gap-3 pr-1 pl-5 py-3.5 rounded-full
-              text-white whitespace-nowrap overflow-hidden
-              relative
-              bg-[#1A1A1A]
-              hover:bg-[#2A2A2A]
-              shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(0,0,0,0.3)]
-              transition-all duration-300
+			  flex items-center gap-3
+			  h-[56px] w-[215px]
+			  px-4
+			  rounded-full
+			  text-white whitespace-nowrap overflow-hidden
+			  relative
+			  bg-[#1A1A1A]
+			  hover:bg-[#2A2A2A]
+			  shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(0,0,0,0.3)]
+			  transition-all duration-300
             ">
 							<span className="font-semibold text-[20px] relative z-10">
 								View All Work
