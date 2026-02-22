@@ -23,7 +23,7 @@ const CustomVideoPlayer: React.FC = () => {
 	};
 
 	return (
-    <div className="relative w-full h-150 aspect-video md:aspect-[2.35/1] rounded-[48px] overflow-hidden border border-white/20 bg-[#0D0D0D] group">
+    <div className="relative w-full h-150 aspect-video md:aspect-1280/601 rounded-[48px] overflow-hidden border border-white/20 bg-[#0D0D0D] group">
       {/* Video Element */}
       <video
         ref={videoRef}
@@ -126,7 +126,7 @@ const FeatureCard: React.FC<{
         {/* Icon - Glass */}
         <GlassIconButton
           closeIcon={
-            <img src={icon} alt="" className="w-7.5 h-7.5 object-contain" />
+            <img src={icon} alt="" className="w-7 h-7 object-contain" />
           }
           h={64}
           w={64}
@@ -139,7 +139,7 @@ const FeatureCard: React.FC<{
         </h3>
 
         {/* Description */}
-        <p className="relative z-10 text-[#E0E0E0] text-[16px] group-hover:text-gray-300 transition-colors geist">
+        <p className="relative z-10 text-[#E0E0E0] text-[16px] group-hover:text-gray-300 transition-colors max-w-80 geist">
           {description}
         </p>
       </div>
@@ -149,7 +149,7 @@ const FeatureCard: React.FC<{
 
 const VideoPodcastSection: React.FC = () => {
 	return (
-    <div className="bg-[#0D0D0D] py-15  px-20 relative overflow-hidden">
+    <div className="bg-[#0D0D0D] py-15 relative overflow-hidden">
       {/* Right Background Gradient SVG */}
       <img
         src="/marquee/bg-grad.svg"
@@ -161,14 +161,14 @@ const VideoPodcastSection: React.FC = () => {
       {/* Background Glow - Top Right */}
       <div className="absolute top-0 right-0 bg-[#0D0D0D] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/4 z-0"></div>
 
-      <div className=" px-6 lg:px-0 relative z-10">
+      <div className="px-20 max-w-360 mx-auto relative z-10">
         {/* Header Text */}
         <div className="text-center mb-16">
-          <h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white mb-5 tracking-tight leading-[1.2] nohemi">
+          <h2 className="text-[32px] lg:text-[56px] font-medium text-[#EDEDED] mb-5 tracking-tight leading-[1.2] nohemi">
             Plug the power of a video <br className="hidden md:block" />
             podcast into your business
           </h2>
-          <p className="text-gray-400 text-[20px] leading-normal max-w-3xl mx-auto geist">
+          <p className="text-[#E0E0E0] text-[20px] leading-normal max-w-3xl mx-auto geist">
             From consultancy and guest booking to studio-quality production and
             delivery, we own your video podcast channel.
           </p>

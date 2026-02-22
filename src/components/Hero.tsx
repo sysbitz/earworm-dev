@@ -1,60 +1,75 @@
 import React from "react";
 
 const logos = [
-	"/marquee/lucky-saint.png",
-	"/marquee/kpmg.png",
-	"/marquee/cisco.png",
-	"/marquee/ig.png",
-	"/marquee/soldo.png",
-	"/marquee/wenodo.png",
-	"/marquee/finn.png",
+  { src: "/marquee/lucky-saint.png", w: 60, h: 36 },
+  { src: "/marquee/kpmg.png", w: 83, h: 32 },
+  { src: "/marquee/cisco.png", w: 120, h: 66 },
+  { src: "/marquee/ig.png", w: 87, h: 32 },
+  { src: "/marquee/soldo.png", w: 70, h: 29 },
+  { src: "/marquee/wenodo.png", w: 87, h: 87 },
+  { src: "/marquee/finn.png", w: 70, h: 21 },
 ];
 
-const LogoItem: React.FC<{ name: string }> = ({ name }) => (
-	<div
-		className="relative flex-shrink-0 h-10 lg:h-16 flex items-center justify-center px-2"
-		style={{ minWidth: "100px" }}>
-		{/* Corner bracket markers - 1px stroke rgba(255,255,255,0.30) */}
-		<div
-			className="absolute top-0 left-0 w-3 h-3"
-			style={{
-				borderTop: "1px solid rgba(255,255,255,0.30)",
-				borderLeft: "1px solid rgba(255,255,255,0.30)",
-			}}></div>
-		<div
-			className="absolute top-0 right-0 w-3 h-3"
-			style={{
-				borderTop: "1px solid rgba(255,255,255,0.30)",
-				borderRight: "1px solid rgba(255,255,255,0.30)",
-			}}></div>
-		<div
-			className="absolute bottom-0 left-0 w-3 h-3"
-			style={{
-				borderBottom: "1px solid rgba(255,255,255,0.30)",
-				borderLeft: "1px solid rgba(255,255,255,0.30)",
-			}}></div>
-		<div
-			className="absolute bottom-0 right-0 w-3 h-3"
-			style={{
-				borderBottom: "1px solid rgba(255,255,255,0.30)",
-				borderRight: "1px solid rgba(255,255,255,0.30)",
-			}}></div>
+type LogoProps = {
+  src: string;
+  w: number;
+  h: number;
+};
 
-		<div className="px-4 lg:px-6 w-full flex items-center justify-center">
-			<img
-				src={name}
-				alt=""
-				className="w-16 object-contain"
-				style={{ filter: "brightness(0) invert(1)" }}
-			/>
-		</div>
-	</div>
+const LogoItem: React.FC<LogoProps> = ({ src, w, h }) => (
+  <div
+    className="relative shrink-0 h-10 lg:h-16 flex items-center justify-center px-2"
+    style={{ minWidth: "100px" }}
+  >
+    {/* Corner bracket markers - 1px stroke rgba(255,255,255,0.30) */}
+    <div
+      className="absolute top-0 left-0 w-3 h-3"
+      style={{
+        borderTop: "1px solid rgba(255,255,255,0.30)",
+        borderLeft: "1px solid rgba(255,255,255,0.30)",
+      }}
+    ></div>
+    <div
+      className="absolute top-0 right-0 w-3 h-3"
+      style={{
+        borderTop: "1px solid rgba(255,255,255,0.30)",
+        borderRight: "1px solid rgba(255,255,255,0.30)",
+      }}
+    ></div>
+    <div
+      className="absolute bottom-0 left-0 w-3 h-3"
+      style={{
+        borderBottom: "1px solid rgba(255,255,255,0.30)",
+        borderLeft: "1px solid rgba(255,255,255,0.30)",
+      }}
+    ></div>
+    <div
+      className="absolute bottom-0 right-0 w-3 h-3"
+      style={{
+        borderBottom: "1px solid rgba(255,255,255,0.30)",
+        borderRight: "1px solid rgba(255,255,255,0.30)",
+      }}
+    ></div>
+
+    <div className="px-4 lg:px-6 w-full flex items-center justify-center">
+      <img
+        src={src}
+        alt=""
+        className="object-contain"
+        style={{
+          width: `${w}px`,
+          height: `${h}px`,
+          filter: "brightness(0) invert(1)",
+        }}
+      />
+    </div>
+  </div>
 );
 
 const Hero: React.FC = () => {
-	return (
+  return (
     <div
-      className="relative min-h-screen flex flex-col pt-30 px-20 overflow-hidden"
+      className="relative min-h-screen flex flex-col pt-40 overflow-hidden"
       style={{ backgroundColor: "#0D0D0D" }}
     >
       {/* Background Glow Effect — large teal radial blob, centered top-right behind images */}
@@ -71,22 +86,22 @@ const Hero: React.FC = () => {
         }}
       />
 
-      <div className="w-full px-6 lg:px-0 z-10 grow flex flex-col">
-        <div className="flex flex-col lg:flex-row items-center justify-between pt-8 lg:pt-20 pb-30 lg:pb-0 grow">
+      <div className="px-20 max-w-360 mx-auto z-10 grow flex flex-col w-full">
+        <div className="flex flex-col lg:flex-row items-start justify-between pt-8 lg:pt-20 pb-30 lg:pb-0 grow">
           {/* Left Text Content */}
           <div className="flex-1 text-center lg:text-left z-20 w-full lg:max-w-[50%]">
-            <h1 className="text-[38px] md:text-6xl lg:text-[72px] font-display font-bold tracking-tight text-white leading-[1.1] mb-6 nohemi">
+            <h1 className="text-[38px] md:text-6xl lg:text-[72px] font-medium tracking-tight text-white leading-[110%] mb-6 nohemi">
               <span className="text-[#1CFA76]">Video podcasts</span> for <br />
               forward thinking <br />
               businesses
             </h1>
 
-            <p className="mt-6 lg:mt-5 mb-10 text-[16px] lg:text-[18px] text-gray-300 max-w-xl mx-auto lg:mx-0 font-normal leading-normal px-2 lg:px-0 geist">
+            <p className="mt-6 lg:mt-5 mb-10 text-[16px] lg:text-[18px] text-gray-300 max-w-xl mx-auto lg:mx-0 font-normal leading-[150%] px-2 lg:px-0 geist">
               We plan, produce, and distribute strategic video podcasts that
               build brand authority and support growth
             </p>
 
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 mb-8.5">
               <button className="group flex items-center justify-between gap-3 rounded-[50px] bg-[linear-gradient(264deg,#FFF_-74.9%,#645BEF_64.18%)] text-lg font-medium text-white transition-all hover:opacity-90 shadow-[0_0_20px_rgba(99,102,241,0.3)] geist">
                 <span className="py-3.5 pl-5">Chat to the team</span>
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-black transition-transform group-hover:scale-105 mr-1 my-1">
@@ -131,14 +146,14 @@ const Hero: React.FC = () => {
                       "linear-gradient(145deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.08) 100%)",
                   }}
                 >
-                  <img src="marquee/video.png" alt="" />
+                  <img src="marquee/video.svg" alt="" />
                 </span>
               </button>
             </div>
           </div>
 
           {/* Right Image Composition */}
-          <div className="flex-1 w-full lg:w-auto mt-16 lg:mt-0 flex items-center justify-center lg:justify-end relative z-10 overflow-visible">
+          <div className="flex-1 w-full lg:w-auto mt-16 lg:mt-0 flex items-start justify-center lg:justify-end relative z-10 overflow-visible">
             <div
               className="relative overflow-visible"
               style={{ width: "489px", height: "447px" }}
@@ -208,10 +223,10 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Trusted By Section */}
-        <div className="pb-12 lg:pb-16 mt-43.5">
-          <p className="text-center text-[16px] lg:text-[19px] text-white mb-10 lg:mb-12 font-medium geist">
-            Trusted by <span className="text-[#1CF975] font-bold">100+</span>{" "}
-            clever businesses
+        <div className="pb-12 lg:pb-15 mt-35">
+          <p className="text-center text-[16px] lg:text-[24px] text-white mb-10 lg:mb-12 font-semibold geist">
+            Trusted by <span className="text-[#1CF975]">100+</span> clever
+            businesses
           </p>
 
           {/* Marquee container */}
@@ -242,7 +257,7 @@ const Hero: React.FC = () => {
               }}
             >
               {[...logos, ...logos, ...logos].map((logo, i) => (
-                <LogoItem key={i} name={logo} />
+                <LogoItem key={i} src={logo.src} w={logo.w} h={logo.h} />
               ))}
             </div>
           </div>

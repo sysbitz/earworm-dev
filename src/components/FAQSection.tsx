@@ -176,8 +176,8 @@ const FAQSection: React.FC = () => {
 	};
 
 	return (
-		<div className="bg-[#0D0D0D] py-15 px-20">
-			<div className=" px-6  lg:px-0">
+		<div className="bg-[#0D0D0D] py-15">
+			<div className="px-20 relative z-10 max-w-360 mx-auto">
 				{/* Header */}
 				<div className="text-center mb-16">
 					<h2 className="text-[32px] lg:text-[56px] nohemi font-medium text-white mb-5 tracking-tight leading-[1.2]">

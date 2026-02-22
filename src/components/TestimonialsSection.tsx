@@ -62,8 +62,8 @@ const TestimonialsSection: React.FC = () => {
 	const current = testimonials[currentIndex];
 
 	return (
-		<div className="py-24 px-20 relative overflow-hidden">
-			<div className="px-6 lg:px-12 relative z-10">
+		<div className="bg-[#0D0D0D] py-24 relative overflow-hidden">
+			<div className="px-20 max-w-360 mx-auto relative z-10">
 				{/* Header */}
 				<div className="text-center mb-16 relative">
 					<h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white tracking-tight nohemi leading-[1.2]">
@@ -77,25 +77,29 @@ const TestimonialsSection: React.FC = () => {
 				</div>
 
 				{/* Testimonial Card */}
-				<div
-					className="relative rounded-4xl p-3 flex flex-col md:flex-row gap-0 overflow-hidden max-w-6xl mx-auto"
-					style={{
-						background:
-							"radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.06) 40%, rgba(255,255,255,0.03) 100%)",
-						backdropFilter: "blur(32px) saturate(160%)",
-						WebkitBackdropFilter: "blur(32px) saturate(160%)",
-						border: "1px solid rgba(255,255,255,0.15)",
-						boxShadow:
-							"0 8px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(0,0,0,0.2)",
-						minHeight: '370px',
-						transition: 'min-height 0.3s',
-					}}>
+				   <div
+							   className="relative overflow-hidden mx-auto flex flex-row items-center"
+							   style={{
+									   width: '100%',
+									   maxWidth: '1280px',
+									   minHeight: '444px',
+									   height: '444px',
+									   padding: '60px',
+									   border: '1px solid rgba(255,255,255,0.15)',
+									   borderRadius: '40px',
+									   margin: '80px auto',
+									   boxShadow: '0 8px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(0,0,0,0.2)',
+									   background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.06) 40%, rgba(255,255,255,0.03) 100%)',
+									   backdropFilter: 'blur(32px) saturate(160%)',
+									   WebkitBackdropFilter: 'blur(32px) saturate(160%)',
+									   transition: 'min-height 0.3s',
+								   }}>
 					{/* Top specular highlight */}
 					<div
 						className="absolute top-0 left-0 right-0 h-px pointer-events-none z-10"
 						style={{
 							background:
-								"linear-gradient(90deg, transparent 5%, rgba(255,255,255,0.45) 30%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.45) 70%, transparent 95%)",
+								"linear-gradient(90deg, transparent 5%, rgba(255,255,255,0.45) 30%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.45) 70%, transparent 95%)"
 						}}
 					/>
 
@@ -104,17 +108,18 @@ const TestimonialsSection: React.FC = () => {
 						className="absolute inset-0 pointer-events-none"
 						style={{
 							background:
-								"linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 50%)",
+								"linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 50%)"
 						}}
 					/>
 
 					{/* Left Image */}
-					<div className="w-full md:w-85 h-70 md:h-auto shrink-0 relative rounded-3xl overflow-hidden">
-						<img
-							src={current.image}
-							alt={current.name}
-							className="w-full h-full object-cover"
-						/>
+					   <div className="flex-shrink-0 relative overflow-hidden" style={{width:'280px',height:'280px',display:'flex',alignItems:'center',justifyContent:'center',borderRadius:'64px',marginRight:'32px'}}>
+						   <img
+							   src={current.image}
+							   alt={current.name}
+							   className="w-full h-full object-cover"
+							   style={{width:'100%',height:'100%',objectFit:'cover'}}
+						   />
 						{/* subtle vignette on image */}
 						<div
 							className="absolute inset-0 rounded-3xl"
@@ -123,56 +128,54 @@ const TestimonialsSection: React.FC = () => {
 					</div>
 
 					{/* Right Content */}
-					<div className="flex-1 flex flex-col justify-between py-8 px-8 md:px-10 relative z-10">
-						<blockquote className="text-[19px] md:text-[22px] text-white/90 leading-[1.7] mb-8 geist">
-							"{current.quote}"
-						</blockquote>
-
-						<div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-							<div className="flex items-center gap-5">
-								<div>
-									<h4 className="text-white font-bold text-[18px] mb-0.5 geist">
-										{current.name}
-									</h4>
-									<p className="text-white/50 text-[14px] geist">
-										{current.role}
-									</p>
-								</div>
-
-								{/* Divider */}
-								<div className="w-px h-10 bg-white/15 hidden md:block"></div>
-
-								{/* Company Logo */}
-								<img
-									src={current.logo}
-									alt={current.company}
-									className="h-7 w-auto object-contain opacity-90"
-								/>
-							</div>
-
-							{/* Navigation Arrows */}
-							<div className="flex items-center gap-3">
-								<button
-									onClick={handlePrevious}
-									className="w-11 h-11 rounded-xl flex items-center justify-center text-white/60 hover:text-white transition-all"
-									style={{
-										background: "rgba(255,255,255,0.08)",
-										border: "1px solid rgba(255,255,255,0.12)",
-									}}>
-									<ArrowLeft className="w-4 h-4" />
-								</button>
-								<button
-									onClick={handleNext}
-									className="w-11 h-11 rounded-xl flex items-center justify-center text-white/60 hover:text-white transition-all"
-									style={{
-										background: "rgba(255,255,255,0.08)",
-										border: "1px solid rgba(255,255,255,0.12)",
-									}}>
-									<ArrowRight className="w-4 h-4" />
-								</button>
-							</div>
-						</div>
-					</div>
+					   <div className="flex-1 flex flex-col justify-between relative z-10 h-full">
+						   <blockquote className="text-[22px] text-white/90 leading-[1.7] geist" style={{margin:0}}>
+							   "{current.quote}"
+						   </blockquote>
+						   <div>
+							   <div className="flex items-center gap-5 justify-between">
+								   <div className="flex items-center gap-5">
+									   <div>
+										   <h4 className="text-white font-bold text-[18px] mb-0.5 geist" style={{margin:0}}>
+											   {current.name}
+										   </h4>
+										   <p className="text-white/50 text-[14px] geist" style={{margin:0}}>
+											   {current.role}
+										   </p>
+									   </div>
+									   <div className="w-px h-10 bg-white/15"></div>
+									   <img
+										   src={current.logo}
+										   alt={current.company}
+										   className="h-7 w-auto object-contain opacity-90"
+										   style={{margin:0}}
+									   />
+								   </div>
+								   <div className="flex items-center gap-3">
+									   <button
+										   onClick={handlePrevious}
+										   className="w-11 h-11 rounded-xl flex items-center justify-center text-white/60 hover:text-white transition-all"
+										   style={{
+											   background: "rgba(255,255,255,0.08)",
+											   border: "1px solid rgba(255,255,255,0.12)",
+										   }}
+									   >
+										   <ArrowLeft size={20} />
+									   </button>
+									   <button
+										   onClick={handleNext}
+										   className="w-11 h-11 rounded-xl flex items-center justify-center text-white/60 hover:text-white transition-all"
+										   style={{
+											   background: "rgba(255,255,255,0.08)",
+											   border: "1px solid rgba(255,255,255,0.12)",
+										   }}
+									   >
+										   <ArrowRight size={20} />
+									   </button>
+								   </div>
+							   </div>
+						   </div>
+					   </div>
 				</div>
 
 				{/* Testimonial Indicators */}

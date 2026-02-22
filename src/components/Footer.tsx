@@ -9,8 +9,8 @@ const Footer: React.FC = () => {
 	];
 
 	return (
-		<footer className="bg-[#0D0D0D] pt-20 pb-10 font-sans px-4 ">
-			<div className="px-20">
+		<footer className="bg-[#0D0D0D] pt-20 pb-10 font-sans">
+			<div className="px-20 max-w-360 mx-auto">
 				{/* Two persistent columns */}
 				<div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-40 mb-20">
 					{/* LEFT COLUMN: logo + description + form + US office */}

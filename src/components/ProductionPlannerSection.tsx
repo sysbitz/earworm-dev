@@ -26,12 +26,12 @@ const ProductionPlannerSection: React.FC = () => {
 					}}></div>
 
 				{/* Production Planner Frame */}
-				<img
-					src="/ipadf.png"
-					alt="PodPlanner Production Interface"
-					className="mx-auto rounded-3xl shadow-2xl"
-					style={{ width: "1280px", height: "784px", maxWidth: "100%" }}
-				/>
+				   <img
+					   src="/ipadf.png"
+					   alt="PodPlanner Production Interface"
+					   className="mx-auto rounded-3xl shadow-2xl"
+					   style={{ width: "1280px", height: "660px", maxWidth: "100%" }}
+				   />
 			</div>
 		</div>
 	);
