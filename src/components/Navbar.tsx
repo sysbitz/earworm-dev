@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
           style={{ backdropFilter: "blur(6px)" }}
         />
       )}
-      <div className="fixed geist w-full z-50 top-0 pointer-events-none px-20 py-10">
+      <div className="fixed geist z-50 top-0 pointer-events-none px-20 py-10 left-1/2 -translate-x-1/2 max-w-360 w-full">
         <nav
           className=" w-full px-3 rounded-[50px] p-3 relative pointer-events-auto overflow-visible"
           style={{

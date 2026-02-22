@@ -312,8 +312,9 @@ const CaseStudiesSection: React.FC = () => {
 	};
 
 	return (
-		<div className="py-15 px-20 relative" style={{ overflowX: "clip" }}>
-			<div className="relative z-10">
+		<div className="py-15 relative" style={{ overflowX: "clip" }}>
+			<div className="px-20 relative z-10 max-w-360 mx-auto">
+				<div className="relative z-10">
 				{/* Header */}
 				<div className="flex flex-row justify-between items-start mb-17.5">
 					<div>
@@ -399,6 +400,7 @@ const CaseStudiesSection: React.FC = () => {
 							<ChevronRight className="w-5 h-5" />
 						</button>
 					</div>
+				</div>
 				</div>
 			</div>
 		</div>

@@ -62,8 +62,8 @@ const TestimonialsSection: React.FC = () => {
 	const current = testimonials[currentIndex];
 
 	return (
-		<div className="py-24 px-20 relative overflow-hidden">
-			<div className="px-6 lg:px-12 relative z-10">
+		<div className="bg-[#0D0D0D] py-24 relative overflow-hidden">
+			<div className="px-20 max-w-360 mx-auto relative z-10">
 				{/* Header */}
 				<div className="text-center mb-16 relative">
 					<h2 className="text-[32px] lg:text-[56px] font-display font-medium text-white tracking-tight nohemi leading-[1.2]">

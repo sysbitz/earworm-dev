@@ -12,8 +12,8 @@ const glassStyle: React.CSSProperties = {
 
 const ServicesSection: React.FC = () => {
 	return (
-    <div className="bg-[#E4E5E9] py-15 relative z-0 px-20">
-      <div className="max-w-360 mx-auto px-4 lg:px-0">
+    <div className="bg-[#E4E5E9] py-15 relative z-0">
+      <div className="px-20 max-w-360 mx-auto">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-8">
           <h2 className="text-[32px] lg:text-[56px] nohemi text-[#0D0D0D] tracking-tight font-medium leading-[1.2]">

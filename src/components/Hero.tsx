@@ -69,7 +69,7 @@ const LogoItem: React.FC<LogoProps> = ({ src, w, h }) => (
 const Hero: React.FC = () => {
   return (
     <div
-      className="relative min-h-screen flex flex-col pt-40 px-20 overflow-hidden"
+      className="relative min-h-screen flex flex-col pt-40 overflow-hidden"
       style={{ backgroundColor: "#0D0D0D" }}
     >
       {/* Background Glow Effect — large teal radial blob, centered top-right behind images */}
@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
         }}
       />
 
-      <div className="w-full max-w-360 mx-auto px-6 lg:px-0 z-10 grow flex flex-col">
+      <div className="px-20 max-w-360 mx-auto z-10 grow flex flex-col w-full">
         <div className="flex flex-col lg:flex-row items-start justify-between pt-8 lg:pt-20 pb-30 lg:pb-0 grow">
           {/* Left Text Content */}
           <div className="flex-1 text-center lg:text-left z-20 w-full lg:max-w-[50%]">

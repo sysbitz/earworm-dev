@@ -152,8 +152,8 @@ const StatCard: React.FC<StatCardProps> = ({
 
 const StatsSection: React.FC = () => {
 	return (
-    <div className="bg-[#0D0D0D] py-15 px-20 relative z-10">
-      <div className="max-w-360 mx-auto px-6 lg:px-0">
+    <div className="bg-[#0D0D0D] py-15 relative z-10">
+      <div className="px-20 max-w-360 mx-auto">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-10">
           <h2 className="nohemi text-[32px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.2] max-w-4xl">

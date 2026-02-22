@@ -216,11 +216,11 @@ const DepartmentsSection: React.FC = () => {
   return (
     <div
       ref={wrapperRef}
-      className="bg-[#E6E8EB] relative z-10 px-20 py-15"
+      className="bg-[#E6E8EB] relative z-10 py-15"
       style={{ height: totalHeight }}
     >
       {/* Sticky shell — pins when the section TOP (title) reaches top:0 */}
-      <div className="sticky top-0 flex flex-col justify-center py-2 overflow-visible">
+      <div className="sticky top-0 flex flex-col justify-center py-2 overflow-visible px-20 max-w-360 mx-auto">
         <div className="px-2 lg:px-2 w-full">
           {/* Header */}
           <div className="mb-16 text-center">

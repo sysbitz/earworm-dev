@@ -331,13 +331,13 @@ const ProcessSection: React.FC = () => {
   return (
     <div className="bg-[#E4E5E9]">
       <div
-        className="bg-[#0D0D0D] py-15 relative z-20 px-20"
+        className="bg-[#0D0D0D] py-15 relative z-20"
         style={{
           borderBottomLeftRadius: "80px",
           borderBottomRightRadius: "80px",
         }}
       >
-        <div className="max-w-360 mx-auto px-6 py-8 lg:px-0 relative z-10">
+        <div className="px-20 max-w-360 mx-auto py-8 relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
             {/* Left Column: Sticky Title + Image */}
             <div className="lg:w-[40%] lg:sticky lg:top-35 self-start">

@@ -149,7 +149,7 @@ const FeatureCard: React.FC<{
 
 const VideoPodcastSection: React.FC = () => {
 	return (
-    <div className="bg-[#0D0D0D] py-15 px-20 relative overflow-hidden">
+    <div className="bg-[#0D0D0D] py-15 relative overflow-hidden">
       {/* Right Background Gradient SVG */}
       <img
         src="/marquee/bg-grad.svg"
@@ -161,7 +161,7 @@ const VideoPodcastSection: React.FC = () => {
       {/* Background Glow - Top Right */}
       <div className="absolute top-0 right-0 bg-[#0D0D0D] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/4 z-0"></div>
 
-      <div className="max-w-360 mx-auto px-6 lg:px-0 relative z-10">
+      <div className="px-20 max-w-360 mx-auto relative z-10">
         {/* Header Text */}
         <div className="text-center mb-16">
           <h2 className="text-[32px] lg:text-[56px] font-medium text-[#EDEDED] mb-5 tracking-tight leading-[1.2] nohemi">
