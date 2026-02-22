@@ -72,22 +72,22 @@ const FAQCard: React.FC<{
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 			onClick={onToggle}
-			className="relative group cursor-pointer geist max-w-4xl mx-auto rounded-3xl"
-			style={{ isolation: "isolate" }}>
+			className="relative group cursor-pointer geist max-w-5xl mx-auto transition-all duration-300"
+			style={{ isolation: "isolate", borderRadius: isOpen ? "24px" : "96px" }}>
 			{/* Outer glow border on hover */}
 			<div
-				className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+				className="absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
 				style={{
+					borderRadius: isOpen ? "24px" : "96px",
 					background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.18), transparent 40%)`,
-					borderRadius: "1rem",
 				}}
 			/>
 
 			{/* Liquid Glass Card */}
 			<div
-				className="relative rounded-2xl overflow-hidden transition-all duration-300"
+				className="relative overflow-hidden transition-all duration-300"
 				style={{
-					/* Liquid glass base */
+					borderRadius: isOpen ? "24px" : "96px",
 					background: isOpen
 						? "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.04) 100%)"
 						: "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.04) 50%, rgba(255,255,255,0.02) 100%)",
@@ -158,7 +158,7 @@ const FAQCard: React.FC<{
 							maxHeight: isOpen ? "200px" : "0px",
 							opacity: isOpen ? 1 : 0,
 						}}>
-						<p className="mt-[10px] text-[#E0E0E0] leading-relaxed text-[16px] geist">
+						<p className="mt-2.5 text-[#E0E0E0] leading-relaxed text-[16px] geist pr-24">
 							{faq.answer}
 						</p>
 					</div>
